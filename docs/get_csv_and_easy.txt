@@ -1,3 +1,4 @@
 source /Users/hyakutakeshinkoku/tama/.venv/bin/activate
+rm 130001_tokyo_covid19_positive_cases_by_municipality.csv
 wget https://stopcovid19.metro.tokyo.lg.jp/data/130001_tokyo_covid19_positive_cases_by_municipality.csv
 /Users/hyakutakeshinkoku/tama/.venv/bin/python /Users/hyakutakeshinkoku/tama/covid19tokyo/docs/mitaka_musashino_easy.py
