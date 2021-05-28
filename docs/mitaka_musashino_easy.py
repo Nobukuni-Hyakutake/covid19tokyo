@@ -3,8 +3,7 @@ import pandas as pd
 from datetime import datetime
 from datetime import timedelta
 print('Processing...')
-url ="https://stopcovid19.metro.tokyo.lg.jp/data/130001_tokyo_covid19_positive_cases_by_municipality.csv"
-df01 = pd.read_csv(url, encoding="UTF-8")
+df01 = pd.read_csv('130001_tokyo_covid19_positive_cases_by_municipality.csv', encoding="UTF-8")
 df01['date']=pd.to_datetime(df01['公表_年月日'],
                format='%Y-%m-%d').dt.date
 last_day=df01[['date']].max()[0]
