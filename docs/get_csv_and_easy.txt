@@ -1,3 +1,5 @@
+#下記のテキストを選択した状態でvscodeで ターミナル - 選択したテキストの実行
+
 source /Users/hyakutakeshinkoku/tama/.venv/bin/activate
 rm 130001_tokyo_covid19_positive_cases_by_municipality.csv
 wget https://stopcovid19.metro.tokyo.lg.jp/data/130001_tokyo_covid19_positive_cases_by_municipality.csv
