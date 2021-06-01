@@ -12,13 +12,20 @@ print(last_day1)
 df02=df01.loc[(df01['集計区分']=='市区町村'),:].copy()
 df03=df02.rename(columns={'全国地方公共団体コード':'group_code','陽性者数':'count_sum'})
 df04=df03.loc[:,['group_code','count_sum','date']]
-
-df04['last_day']=last_day1
+df04['group_code']=df04['group_code'].astype('int64')
+df04['count_sum']=df04['count_sum'].astype('float64')
+#1日分の陽性者数の算出ここから
 df04['yesterday']=df04['date']-timedelta(1)
+df05=pd.merge(df04,df04,left_on=['group_code','yesterday'],right_on=['group_code','date'],how='inner')
+df05['count_1day']=df05['count_sum_x']-df05['count_sum_y']
+df06=df05.loc[:,['group_code','count_sum_x','date_x','count_1day']]
+#1日分の陽性者数の算出ここまで
 
 #df02['sevendays_before']=df02['date']-timedelta(7)
 #df02['fourteendays_before']=df02['date']-timedelta(14)
+#df04['last_day']=last_day1
 
-
-#df02.to_csv('covid19tokyo_preprocessed.csv')
-print(df04)
+out=df06
+print(out)
+print(out.dtypes)
+out.to_csv('covid19tokyo_preprocessed.csv')
