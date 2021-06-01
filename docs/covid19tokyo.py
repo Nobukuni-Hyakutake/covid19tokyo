@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 from datetime import timedelta
-Print('Processing...')
+print('Processing...')
 url ="https://stopcovid19.metro.tokyo.lg.jp/data/130001_tokyo_covid19_positive_cases_by_municipality.csv"
 df01 = pd.read_csv(url, encoding="UTF-8")
 
