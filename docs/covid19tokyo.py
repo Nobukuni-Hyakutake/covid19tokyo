@@ -21,11 +21,24 @@ df05['count_1day']=df05['count_sum_x']-df05['count_sum_y']
 df06=df05.loc[:,['group_code','count_sum_x','date_x','count_1day']]
 #1日分の陽性者数の算出ここまで
 
-#df02['sevendays_before']=df02['date']-timedelta(7)
-#df02['fourteendays_before']=df02['date']-timedelta(14)
+#7日分の陽性者数の算出ここから
+df06['sevendays_before']=df06['date_x']-timedelta(7)
+df07=pd.merge(df06,df06,left_on=['group_code','sevendays_before'],right_on=['group_code','date_x'],how='inner')
+df07['count_7days']=df07['count_sum_x_x']-df07['count_sum_x_y']
+df08=df07.loc[:,['group_code','count_sum_x_x','date_x_x','count_1day_x','count_7days']]
+#7日分の陽性者数の算出ここまで
+
+#14日分の陽性者数の算出ここから
+df08['fourteendays_before']=df08['date_x_x']-timedelta(14)
+df09=pd.merge(df08,df08,left_on=['group_code','fourteendays_before'],right_on=['group_code','date_x_x'],how='inner')
+df09['count_14days']=df09['count_sum_x_x_x']-df09['count_sum_x_x_y']
+df09=df09.loc[:,['group_code','date_x_x_x','count_sum_x_x_x','count_1day_x_x','count_7days_x','count_14days']]
+#14日分の陽性者数の算出ここまで
+
+
 #df04['last_day']=last_day1
 
-out=df06
+out=df09
 print(out)
 print(out.dtypes)
 out.to_csv('covid19tokyo_preprocessed.csv')
