@@ -1,6 +1,7 @@
 # Tableau prep builderでやっている前処理をしてCSV出力までを目指す。
 # -*- coding: utf-8 -*-
 import pandas as pd
+import numpy as np
 from datetime import datetime
 from datetime import timedelta
 df01 = pd.read_csv('130001_tokyo_covid19_positive_cases_by_municipality.csv', encoding="UTF-8")
@@ -35,10 +36,16 @@ df09['count_14days']=df09['count_sum_x_x_x']-df09['count_sum_x_x_y']
 df09=df09.loc[:,['group_code','date_x_x_x','count_sum_x_x_x','count_1day_x_x','count_7days_x','count_14days']]
 #14日分の陽性者数の算出ここまで
 
+df10=df09.rename(columns={'date_x_x_x':'date','count_sum_x_x_x':'count_sum','count_1day_x_x':'count_1day','count_7days_x':'count_7days'})
+df10['last7days_ratio']=(df10['count_7days']/(df10['count_14days']-df10['count_7days'])).replace([np.inf, -np.inf], np.nan)
+df10['last_day']=last_day1
 
-#df04['last_day']=last_day1
+#ふりがな・人口を追加する
+ruby = pd.read_csv('ruby.csv', encoding="UTF-8")
+df11=pd.merge(df10,ruby,on='group_code',how='inner')
+df11['population']=df11['population'].astype('float64')
 
-out=df09
+out=df11
 print(out)
 print(out.dtypes)
 out.to_csv('covid19tokyo_preprocessed.csv')
