@@ -51,6 +51,9 @@ out=df11
 #print(out.dtypes)
 out.to_csv('docs/covid19tokyo_preprocessed.csv')
 
+out2=df11.loc[:,['group_code','ruby','date','count_1day','count_7days']]
+out2.to_csv('docs/covid19tokyo_preprocessed_light.csv')
+
 #やさしいにほんごここから
 last_week=last_day1-timedelta(7)
 df21=df01.loc[:,['市区町村名','陽性者数','date']]
