@@ -1,7 +1,7 @@
 # covid19tokyo
 目的：東京都における新型コロナウイルス陽性者数の区市町村別のビジュアライゼーション
 
-covid19tokyo.pyを実行すると最新データを読み込んで、
+main.pyを実行すると最新データを読み込んで、
 
 mitaka_easy.html　と　musashino_easy.html と covid19tokyo_preprocessed.csvが
 
