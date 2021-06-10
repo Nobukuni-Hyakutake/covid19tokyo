@@ -78,6 +78,60 @@ f2=open('docs/musashino_easy.html','wt')
 f2.write(musashino_easy)
 f2.close
 #やさしいにほんごここまで
+
+import plotly.express as px
+import plotly.graph_objects as go
+
+df13203901=out.loc[(out['group_code']==132039),['group_code','label','date','count_1day','count_7days','population']].copy()
+df13203901['sevendays_ave']=round((df13203901['count_7days']/7)/df13203901['population']*100000,1)
+df13203901['count_1day_p']=round(df13203901['count_1day']/df13203901['population']*100000,1)
+df13203901['stage4']=3.6
+df13203901['stage3']=2.1
+
+fig02=go.Bar(
+    x=df13203901["date"], y=df13203901["count_1day_p"], name='10万人あたり',
+    marker={"color": "#99cc66"},
+    hoverinfo = "none",
+    )
+fig03=go.Scatter(
+    x=df13203901["date"], y=df13203901["sevendays_ave"], name='10万人あたり7日間平均',
+    line={"color": "#cc6600"},
+)
+figstage4=go.Scatter(
+    x=df13203901["date"], y=df13203901["stage4"], name='ステージ4基準', 
+    line={"width":1, "color": "red", "dash":"dash"},
+    hoverinfo = "none"
+)
+
+figstage3=go.Scatter(
+    x=df13203901["date"], y=df13203901["stage3"], name='ステージ3基準',
+    line={"width":1, "color": "#ffcc00", "dash":"dash"},
+    hoverinfo = "none"
+)
+layout=go.Layout(
+    title=dict(text='武蔵野市 新型コロナウイルス陽性者数'),
+    xaxis={
+        "linecolor": "black"   
+        },    
+yaxis={
+        "title":{
+        "text": '10万人あたり'
+        },
+        "linecolor": "black",   
+        },
+    hovermode='x',
+    plot_bgcolor="#ffffff"
+    )
+
+fig04=go.Figure(data=[fig02, fig03, figstage4, figstage3], layout=layout)
+fig04.update_yaxes(
+    rangemode="nonnegative"
+)
+fig04.update_layout(legend_orientation="h")
+fig04.update_xaxes(type='date', tickformat="%y/%-m/%-d", tick0='2020-05-01', dtick="M2") 
+#fig04.show()
+fig04.write_html("docs/musashino_graph.html")
+
 print('last day is:')
 print(last_day1)
 print('Done')
