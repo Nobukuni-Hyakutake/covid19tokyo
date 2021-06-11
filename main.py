@@ -109,13 +109,15 @@ figstage3=go.Scatter(
     hoverinfo = "none"
 )
 layout=go.Layout(
-    title=dict(text='武蔵野市 新型コロナウイルス陽性者数'),
+    font=dict(size=16),
+    title={"text":'武蔵野市 新型コロナウイルス陽性者数',
+    },
     xaxis={
         "linecolor": "black"   
         },    
 yaxis={
         "title":{
-        "text": '10万人あたり'
+        "text": '10万人あたり',
         },
         "linecolor": "black",   
         },
