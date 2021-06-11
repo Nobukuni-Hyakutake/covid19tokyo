@@ -109,7 +109,7 @@ figstage3=go.Scatter(
     hoverinfo = "none"
 )
 layout=go.Layout(
-    font=dict(size=20),
+#    font=dict(size=20),
     title={"text":'武蔵野市 新型コロナウイルス陽性者数',
     },
     xaxis={
@@ -130,6 +130,8 @@ fig04.update_yaxes(
     rangemode="nonnegative"
 )
 fig04.update_layout(legend_orientation="h")
+fig04.update_layout(legend={"x":0,"y":-0.2})
+
 fig04.update_xaxes(type='date', tickformat="%y/%-m/%-d", tick0='2020-05-01', dtick="M2") 
 #fig04.show()
 fig04.write_html("docs/musashino_graph.html")
