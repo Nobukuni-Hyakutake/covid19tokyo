@@ -136,6 +136,50 @@ fig04.update_xaxes(type='date', tickformat="%y/%-m/%-d", tick0='2020-05-01', dti
 #fig04.show()
 fig04.write_html("docs/musashino_graph.html")
 
+dfmitaka=out.loc[(out['group_code']==132047),['group_code','label','date','count_1day','count_7days','population']].copy()
+dfmitaka['sevendays_ave']=round((dfmitaka['count_7days']/7)/dfmitaka['population']*100000,1)
+dfmitaka['count_1day_p']=round(dfmitaka['count_1day']/dfmitaka['population']*100000,1)
+dfmitaka['stage4']=3.6
+dfmitaka['stage3']=2.1
+
+fig12=go.Bar(
+    x=dfmitaka["date"], y=dfmitaka["count_1day_p"], name='10万人あたり',
+    marker={"color": "#99cc66"},
+    hoverinfo = "none",
+    )
+fig13=go.Scatter(
+    x=dfmitaka["date"], y=dfmitaka["sevendays_ave"], name='10万人あたり7日間平均',
+    line={"color": "#cc6600"},
+)
+
+layout=go.Layout(
+#    font=dict(size=20),
+    title={"text":'三鷹市 新型コロナウイルス陽性者数',
+    },
+    xaxis={
+        "linecolor": "black"   
+        },    
+yaxis={
+        "title":{
+        "text": '10万人あたり',
+        },
+        "linecolor": "black",   
+        },
+    hovermode='x',
+    plot_bgcolor="#ffffff"
+    )
+
+fig14=go.Figure(data=[fig12, fig13, figstage4, figstage3], layout=layout)
+fig14.update_yaxes(
+    rangemode="nonnegative"
+)
+fig14.update_layout(legend_orientation="h")
+fig14.update_layout(legend={"x":0,"y":-0.2})
+
+fig14.update_xaxes(type='date', tickformat="%y/%-m/%-d", tick0='2020-05-01', dtick="M2") 
+#fig04.show()
+fig14.write_html("docs/mitaka_graph.html")
+
 print('last day is:')
 print(last_day1)
 print('Done')
