@@ -8,7 +8,8 @@ url ="https://stopcovid19.metro.tokyo.lg.jp/data/130001_tokyo_covid19_positive_c
 df01 = pd.read_csv(url, encoding="UTF-8")
 df01['date']=pd.to_datetime(df01['公表_年月日'],
                format='%Y-%m-%d').dt.date
-last_day1=df01[['date']].max()[0]
+#last_day1=df01[['date']].max()[0]
+last_day1=np.amax(df01['date'])
 
 ##SettingWithCopyWarningを回避のため、copyとする。解説はここ。https://linus-mk.hatenablog.com/entry/2019/02/02/200000
 df02=df01.loc[(df01['集計区分']=='市区町村'),:].copy()
