@@ -183,3 +183,16 @@ fig14.write_html("docs/mitaka_graph.html")
 print('last day is:')
 print(last_day1)
 print('Done')
+
+#map表示(工事中 groupcode, lat, lonのテーブルまで作成済み)
+dfmap01=pd.read_csv('office_address.csv')
+dfmap02=dfmap01.loc[(dfmap01['public_office_classification']==1),['group_code','office_no','public_office_name']]
+dfmap02['office_no']=dfmap02['office_no'].str.replace(pat='#p',repl='').astype('int64')
+dfmap11=pd.read_csv('office_position.csv')
+dfmap11['id']=dfmap11['id'].str.replace(pat='p',repl='').astype('int64')
+dfmap12=pd.concat([dfmap11, dfmap11['position'].str.split(' ', expand=True).astype('float64')], axis=1).drop('position', axis=1)
+dfmap12.columns=['office_no','lat','lon']
+dfmap13=pd.merge(dfmap02,dfmap12,on='office_no',how='inner')
+dfmap13=dfmap13.loc[:,['group_code','lat','lon']]
+mapstep00100=dfmap13
+#/map表示
