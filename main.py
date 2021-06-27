@@ -59,6 +59,7 @@ last_week=last_day1-timedelta(7)
 df21=df01.loc[:,['市区町村名','陽性者数','date']]
 df_last_day =df21.query('date==@last_day1')
 df_last_day_mitaka=df_last_day.query('市区町村名=="三鷹市"')
+#df_last_day_mitaka=df21.query('(市区町村名=="三鷹市")&(date==@last_day1)')
 last_day_mitaka_count=df_last_day_mitaka[['陽性者数']].mean()[0]
 df_last_day_musashino=df_last_day.query('市区町村名=="武蔵野市"')
 last_day_musashino_count=df_last_day_musashino[['陽性者数']].mean()[0]
@@ -192,7 +193,6 @@ dfmap11=pd.read_csv('office_position.csv')
 dfmap11['id']=dfmap11['id'].str.replace(pat='p',repl='').astype('int64')
 dfmap12=pd.concat([dfmap11, dfmap11['position'].str.split(' ', expand=True).astype('float64')], axis=1).drop('position', axis=1)
 dfmap12.columns=['office_no','lat','lon']
-dfmap13=pd.merge(dfmap02,dfmap12,on='office_no',how='inner')
-dfmap13=dfmap13.loc[:,['group_code','lat','lon']]
+dfmap13=pd.merge(dfmap02,dfmap12,on='office_no',how='inner').loc[:,['group_code','lat','lon']]
 mapstep00100=dfmap13
 #/map表示
