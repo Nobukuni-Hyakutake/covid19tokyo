@@ -57,12 +57,8 @@ out2.to_csv('docs/covid19tokyo_preprocessed_light.csv')
 #やさしいにほんごここから
 last_week=last_day1-timedelta(7)
 df21=df01.loc[:,['市区町村名','陽性者数','date']]
-df_last_day =df21.query('date==@last_day1')
-df_last_day_mitaka=df_last_day.query('市区町村名=="三鷹市"')
-#df_last_day_mitaka=df21.query('(市区町村名=="三鷹市")&(date==@last_day1)')
-last_day_mitaka_count=df_last_day_mitaka[['陽性者数']].mean()[0]
-df_last_day_musashino=df_last_day.query('市区町村名=="武蔵野市"')
-last_day_musashino_count=df_last_day_musashino[['陽性者数']].mean()[0]
+last_day_mitaka_count=df21.query('(市区町村名=="三鷹市")&(date==@last_day1)').mean()[0]
+last_day_musashino_count=df21.query('(市区町村名=="武蔵野市")&(date==@last_day1)').mean()[0]
 df_last_week =df21.query('date==@last_week')
 df_last_week_mitaka=df_last_week.query('市区町村名=="三鷹市"')
 last_week_mitaka_count=df_last_week_mitaka[['陽性者数']].mean()[0]
