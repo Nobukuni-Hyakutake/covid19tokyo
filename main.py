@@ -4,8 +4,9 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 from datetime import timedelta
-url ="https://stopcovid19.metro.tokyo.lg.jp/data/130001_tokyo_covid19_positive_cases_by_municipality.csv"
-df01 = pd.read_csv(url, encoding="UTF-8")
+#url ="https://stopcovid19.metro.tokyo.lg.jp/data/130001_tokyo_covid19_positive_cases_by_municipality.csv"
+#df01 = pd.read_csv(url, encoding="UTF-8")
+df01 = pd.read_csv('130001_tokyo_covid19_positive_cases_by_municipality.csv', encoding="UTF-8")
 df01['date']=pd.to_datetime(df01['公表_年月日'],
                format='%Y-%m-%d').dt.date
 last_day1=df01['date'].max()
@@ -182,6 +183,7 @@ print(last_day1)
 print('Done')
 
 #map表示(工事中 groupcode, lat, lonのテーブルまで作成済み)
+pd.set_option('display.max_rows', 100)
 dfmap01=pd.read_csv('office_address.csv')
 dfmap02=dfmap01.loc[(dfmap01['public_office_classification']==1),['group_code','office_no','public_office_name']]
 dfmap02['office_no']=dfmap02['office_no'].str.replace(pat='#p',repl='').astype('int64')
@@ -193,11 +195,15 @@ dfmap13=pd.merge(dfmap02,dfmap12,on='office_no',how='inner').loc[:,['group_code'
 mapstep00100=dfmap13
 
 dfmap20=out.query('date==last_day')
-dfmap21=dfmap20.loc[:,['date','group_code','count_7days','pref','label','population','en']]
+dfmap21=dfmap20.loc[:,['date','group_code','count_7days','last7days_ratio','pref','label','population','en']]
 dfmap21['group_code']=dfmap21['group_code'].astype('str')
 dfmap21['group_code']=dfmap21['group_code'].str[0:5]
 mapstep00100['group_code']=mapstep00100['group_code'].astype('str')
 dfmap30=pd.merge(dfmap21,mapstep00100,on='group_code',how='inner')
 dfmap30['date']=dfmap30['date'].astype('datetime64')
+dfmap30['last7days_ratio']=round(dfmap30['last7days_ratio'],1)
+print(dfmap30)
+print(dfmap30.dtypes)
+dfmap30.to_csv('step00200.csv')
 #データ準備まで完了
 #/map表示
