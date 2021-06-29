@@ -194,4 +194,10 @@ mapstep00100=dfmap13
 
 dfmap20=out.query('date==last_day')
 dfmap21=dfmap20.loc[:,['date','group_code','count_7days','pref','label','population','en']]
+dfmap21['group_code']=dfmap21['group_code'].astype('str')
+dfmap21['group_code']=dfmap21['group_code'].str[0:5]
+mapstep00100['group_code']=mapstep00100['group_code'].astype('str')
+dfmap30=pd.merge(dfmap21,mapstep00100,on='group_code',how='inner')
+dfmap30['date']=dfmap30['date'].astype('datetime64')
+#データ準備まで完了
 #/map表示
