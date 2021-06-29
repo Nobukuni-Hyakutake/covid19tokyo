@@ -199,5 +199,5 @@ dfmap21['group_code']=dfmap21['group_code'].str[0:5]
 mapstep00100['group_code']=mapstep00100['group_code'].astype('str')
 dfmap30=pd.merge(dfmap21,mapstep00100,on='group_code',how='inner')
 dfmap30['date']=dfmap30['date'].astype('datetime64')
-#データ準備まで完了
+#データ準備完了
 #/map表示
