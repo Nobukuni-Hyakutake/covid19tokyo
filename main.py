@@ -191,4 +191,7 @@ dfmap12=pd.concat([dfmap11, dfmap11['position'].str.split(' ', expand=True).asty
 dfmap12.columns=['office_no','lat','lon']
 dfmap13=pd.merge(dfmap02,dfmap12,on='office_no',how='inner').loc[:,['group_code','lat','lon']]
 mapstep00100=dfmap13
+
+dfmap20=out.query('date==last_day')
+dfmap21=dfmap20.loc[:,['date','group_code','count_7days','pref','label','population','en']]
 #/map表示
