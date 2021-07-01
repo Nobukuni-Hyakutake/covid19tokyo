@@ -2,6 +2,7 @@
 print('Processing...')
 import pandas as pd
 import numpy as np
+import folium
 from datetime import datetime
 from datetime import timedelta
 #url ="https://stopcovid19.metro.tokyo.lg.jp/data/130001_tokyo_covid19_positive_cases_by_municipality.csv"
@@ -182,7 +183,7 @@ print('last day is:')
 print(last_day1)
 print('Done')
 
-#map表示(工事中 groupcode, lat, lonのテーブルまで作成済み)
+#map表示(工事中)
 pd.set_option('display.max_rows', 100)
 dfmap01=pd.read_csv('office_address.csv')
 dfmap02=dfmap01.loc[(dfmap01['public_office_classification']==1),['group_code','office_no','public_office_name']]
@@ -205,5 +206,11 @@ dfmap30['last7days_ratio']=round(dfmap30['last7days_ratio'],1)
 print(dfmap30)
 print(dfmap30.dtypes)
 dfmap30.to_csv('step00200.csv')
-#データ準備まで完了
+musashino_lon=dfmap30.loc[(dfmap30['en']=='Musashino'),['lon']].mean()[0]
+musashino_lat=dfmap30.loc[(dfmap30['en']=='Musashino'),['lat']].mean()[0]
+print(musashino_lon)
+print(musashino_lat)
+map=folium.Map(location=[35.702083,139.745023],zoom_start=11)
+folium.Marker(location=[musashino_lat,musashino_lon]).add_to(map)
+map.save(outfile="docs/map.html")
 #/map表示
