@@ -203,14 +203,27 @@ mapstep00100['group_code']=mapstep00100['group_code'].astype('str')
 dfmap30=pd.merge(dfmap21,mapstep00100,on='group_code',how='inner')
 dfmap30['date']=dfmap30['date'].astype('datetime64')
 dfmap30['last7days_ratio']=round(dfmap30['last7days_ratio'],1)
-print(dfmap30)
-print(dfmap30.dtypes)
+dfmap30['sevendays_ave_p']=round(dfmap30['count_7days']/dfmap30['population']*100000,2)
+dfmap30['color']="green"
+dfmap30.loc[(dfmap30['last7days_ratio']<0.9),['color']]="yellow"
+dfmap30.loc[(dfmap30['last7days_ratio']>1.1),['color']]="blue"
+
 dfmap30.to_csv('step00200.csv')
-musashino_lon=dfmap30.loc[(dfmap30['en']=='Musashino'),['lon']].mean()[0]
-musashino_lat=dfmap30.loc[(dfmap30['en']=='Musashino'),['lat']].mean()[0]
-print(musashino_lon)
-print(musashino_lat)
-map=folium.Map(location=[35.702083,139.745023],zoom_start=11)
-folium.Marker(location=[musashino_lat,musashino_lon]).add_to(map)
+
+base_amount=1.0
+scale=40
+map=folium.Map(location=[35.710943,139.462252],zoom_start=11, tiles="cartodbpositron")
+for index, row in dfmap30.iterrows():
+    location=(row['lat'],row['lon'])
+    radius=scale*(row['sevendays_ave_p']/base_amount)
+    color=row['color']
+    popup=row['label']
+    folium.Circle(
+        location=location,
+        radius=radius,
+        color=color,
+        fill_color=color,
+        popup=popup
+        ).add_to(map)
 map.save(outfile="docs/map.html")
 #/map表示
