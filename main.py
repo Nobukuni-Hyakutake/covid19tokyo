@@ -2,6 +2,7 @@
 print('Processing...')
 import pandas as pd
 import numpy as np
+import json
 from folium.features import DivIcon
 import folium
 from datetime import datetime
@@ -176,7 +177,28 @@ test='Kokubunji'
 test2='国分寺市'
 base_amount=1.0
 scale=40
-tokyo_map=folium.Map(location=[35.710943,139.462252],zoom_start=11, tiles="cartodbpositron")
+tokyo_map=folium.Map(location=[35.710943,139.462252],zoom_start=11, tiles="openstreetmap")
+
+tokyo_map=folium.Map(location=[35.710943,139.462252],zoom_start=11, tiles="cartodbdark_matter")
+test_df=pd.read_csv('japan_co.csv')
+#base_map=folium.Map(location=[35.655616,139.338853],zoom_start=5.0)#Choropleth追加
+cho=folium.Choropleth(
+    geo_data=json.load(open("Japan.geojson","r")),
+    data=test_df,
+    columns=["name","value"],
+    key_on="feature.properties.name",
+    fill_color="BuGn",
+    fill_opacity=0.8,
+    line_color="black",
+    line_weight=1
+    )
+#凡例を隠す
+for key in cho._children:
+    if key.startswith('color_map'):
+        del(cho._children[key])
+#/凡例を隠す
+cho.add_to(tokyo_map)
+
 for index, row in dfmap30.iterrows():
     location=(row['lat'],row['lon'])
     radius=scale*(row['sevendays_ave_p']/base_amount)
