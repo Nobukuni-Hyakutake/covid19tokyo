@@ -210,7 +210,8 @@ dfmap30.loc[(dfmap30['last7days_ratio']<0.9),['color']]="#c3cb71"
 dfmap30.loc[(dfmap30['last7days_ratio']>1.1),['color']]="#1b85b8"
 
 dfmap30.to_csv('step00200.csv')
-
+test='Kokubunji'
+test2='国分寺市'
 base_amount=1.0
 scale=40
 tokyomap=folium.Map(location=[35.710943,139.462252],zoom_start=11, tiles="cartodbpositron")
@@ -226,14 +227,13 @@ for index, row in dfmap30.iterrows():
         fill_color=color,
         popup=popup
         ).add_to(tokyomap)
-#for index, row in dfmap30.iterrows():
-#    folium.map.Marker(
-#    location=(row['lat'],row['lon']),
-#    icon=DivIcon(
-#        icon_size=(250,36),
-#        icon_anchor=(0,0),
-#        html='<div style="font-size: 200pt">Toto is my name</div>',
-#        )
-#    ).add_to(tokyomap)
+folium.map.Marker(
+    [35.710943,139.462252],
+    icon=DivIcon(
+        icon_size=(0,0),
+        icon_anchor=(20,20),
+        html='<div style="font-size: 10pt" style="text-align:center;">kokubunji<br>test</div>',
+        )
+    ).add_to(tokyomap)
 tokyomap.save(outfile="docs/tokyomap.html")
 #/map表示
