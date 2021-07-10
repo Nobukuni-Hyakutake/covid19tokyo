@@ -2,6 +2,7 @@
 print('Processing...')
 import pandas as pd
 import numpy as np
+from folium.features import DivIcon
 import folium
 from datetime import datetime
 from datetime import timedelta
@@ -202,17 +203,17 @@ dfmap21['group_code']=dfmap21['group_code'].str[0:5]
 mapstep00100['group_code']=mapstep00100['group_code'].astype('str')
 dfmap30=pd.merge(dfmap21,mapstep00100,on='group_code',how='inner')
 dfmap30['date']=dfmap30['date'].astype('datetime64')
-dfmap30['last7days_ratio']=round(dfmap30['last7days_ratio'],1)
+dfmap30['last7days_ratio']=round(dfmap30['last7days_ratio'],2)
 dfmap30['sevendays_ave_p']=round(dfmap30['count_7days']/dfmap30['population']*100000,2)
-dfmap30['color']="green"
-dfmap30.loc[(dfmap30['last7days_ratio']<0.9),['color']]="yellow"
-dfmap30.loc[(dfmap30['last7days_ratio']>1.1),['color']]="blue"
+dfmap30['color']="#559e83"
+dfmap30.loc[(dfmap30['last7days_ratio']<0.9),['color']]="#c3cb71"
+dfmap30.loc[(dfmap30['last7days_ratio']>1.1),['color']]="#1b85b8"
 
 dfmap30.to_csv('step00200.csv')
 
 base_amount=1.0
 scale=40
-map=folium.Map(location=[35.710943,139.462252],zoom_start=11, tiles="cartodbpositron")
+tokyomap=folium.Map(location=[35.710943,139.462252],zoom_start=11, tiles="cartodbpositron")
 for index, row in dfmap30.iterrows():
     location=(row['lat'],row['lon'])
     radius=scale*(row['sevendays_ave_p']/base_amount)
@@ -224,6 +225,15 @@ for index, row in dfmap30.iterrows():
         color=color,
         fill_color=color,
         popup=popup
-        ).add_to(map)
-map.save(outfile="docs/map.html")
+        ).add_to(tokyomap)
+#for index, row in dfmap30.iterrows():
+#    folium.map.Marker(
+#    location=(row['lat'],row['lon']),
+#    icon=DivIcon(
+#        icon_size=(250,36),
+#        icon_anchor=(0,0),
+#        html='<div style="font-size: 200pt">Toto is my name</div>',
+#        )
+#    ).add_to(tokyomap)
+tokyomap.save(outfile="docs/tokyomap.html")
 #/map表示
