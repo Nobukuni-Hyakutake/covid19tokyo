@@ -7,9 +7,9 @@ from folium.features import DivIcon
 import folium
 from datetime import datetime
 from datetime import timedelta
-#url ="https://stopcovid19.metro.tokyo.lg.jp/data/130001_tokyo_covid19_positive_cases_by_municipality.csv"
-#df01 = pd.read_csv(url, encoding="UTF-8")
-df01 = pd.read_csv('130001_tokyo_covid19_positive_cases_by_municipality.csv', encoding="UTF-8")
+url ="https://stopcovid19.metro.tokyo.lg.jp/data/130001_tokyo_covid19_positive_cases_by_municipality.csv"
+df01 = pd.read_csv(url, encoding="UTF-8")
+#df01 = pd.read_csv('130001_tokyo_covid19_positive_cases_by_municipality.csv', encoding="UTF-8")
 df01['date']=pd.to_datetime(df01['公表_年月日'],
                format='%Y-%m-%d').dt.date
 last_day1=df01['date'].max()
@@ -183,7 +183,7 @@ tokyo_map=folium.Map(location=[35.710943,139.462252],zoom_start=11, tiles="carto
 test_df=pd.read_csv('japan_co.csv')
 #base_map=folium.Map(location=[35.655616,139.338853],zoom_start=5.0)#Choropleth追加
 cho=folium.Choropleth(
-    geo_data=json.load(open("Japan.geojson","r")),
+    geo_data=json.load(open("Tokyo.geojson","r")),
     data=test_df,
     columns=["name","value"],
     key_on="feature.properties.name",
