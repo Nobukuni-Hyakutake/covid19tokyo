@@ -171,7 +171,7 @@ dfmap30.loc[(dfmap30['last7days_ratio']>1.1),['color']]="#1b85b8"
 dfmap30.to_csv('step00200.csv')
 
     
-dfmap30['popup']='<h href='+dfmap30['g_url']+'>Daily graph</h>'
+dfmap30['popup']='<a href="'+dfmap30['g_url']+'">Daily graph</a>'
 
 test='Kokubunji'
 test2='国分寺市'
@@ -201,7 +201,7 @@ cho.add_to(tokyo_map)
 
 for index, row in dfmap30.iterrows():
     location=(row['lat'],row['lon'])
-    radius=scale*(row['sevendays_ave_p']/base_amount)
+    radius=scale*(row['sevendays_ave_p']/base_amount)*0.7
     color=row['color']
     popup=row['popup']
     folium.Circle(
