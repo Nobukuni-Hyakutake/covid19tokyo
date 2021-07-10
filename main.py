@@ -45,8 +45,8 @@ df10['last7days_ratio']=(df10['count_7days']/(df10['count_14days']-df10['count_7
 df10['last_day']=last_day1
 
 #ふりがな・人口を追加する
-ruby = pd.read_csv('ruby.csv', encoding="UTF-8")
-df11=pd.merge(df10,ruby,on='group_code',how='inner')
+ruby2 = pd.read_csv('ruby2.csv', encoding="UTF-8")
+df11=pd.merge(df10,ruby2,on='group_code',how='inner')
 df11['population']=df11['population'].astype('float64')
 
 out=df11
