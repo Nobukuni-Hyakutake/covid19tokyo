@@ -134,12 +134,14 @@ for i in range (62):
         rangemode="nonnegative"
         )
     fig04.update_layout(legend_orientation="h")
-    fig04.update_layout(legend={"x":0,"y":-0.2})
+    fig04.update_layout(legend={"x":0,"y":-0.1})
 
     fig04.update_xaxes(type='date', tickformat="%y/%-m/%-d", tick0='2020-05-01', dtick="M2") 
 
     fig04.write_html("docs/"+en00201+"_g.html")
 
+df00101=out
+df00101['g_url']='https://nobukuni-hyakutake.github.io/covid19tokyo/'+out['en']+'_g.html'
 #map表示(工事中)
 pd.set_option('display.max_rows', 100)
 dfmap01=pd.read_csv('office_address.csv')
@@ -152,8 +154,8 @@ dfmap12.columns=['office_no','lat','lon']
 dfmap13=pd.merge(dfmap02,dfmap12,on='office_no',how='inner').loc[:,['group_code','lat','lon']]
 mapstep00100=dfmap13
 
-dfmap20=out.query('date==last_day')
-dfmap21=dfmap20.loc[:,['date','group_code','count_7days','last7days_ratio','pref','label','population','en']]
+dfmap20=df00101.query('date==last_day')
+dfmap21=dfmap20.loc[:,['date','group_code','count_7days','last7days_ratio','pref','label','population','en','g_url','number']]
 dfmap21['group_code']=dfmap21['group_code'].astype('str')
 dfmap21['group_code']=dfmap21['group_code'].str[0:5]
 mapstep00100['group_code']=mapstep00100['group_code'].astype('str')
@@ -167,33 +169,46 @@ dfmap30.loc[(dfmap30['last7days_ratio']>1.1),['color']]="#1b85b8"
 
 dfmap30.to_csv('step00200.csv')
 
+    
+dfmap30['popup']='<h href='+dfmap30['g_url']+'>Daily graph</h>'
 
 test='Kokubunji'
 test2='国分寺市'
 base_amount=1.0
 scale=40
-tokyomap=folium.Map(location=[35.710943,139.462252],zoom_start=11, tiles="cartodbpositron")
+tokyo_map=folium.Map(location=[35.710943,139.462252],zoom_start=11, tiles="cartodbpositron")
 for index, row in dfmap30.iterrows():
     location=(row['lat'],row['lon'])
     radius=scale*(row['sevendays_ave_p']/base_amount)
     color=row['color']
-    popup=row['label']
+    popup=row['popup']
     folium.Circle(
         location=location,
         radius=radius,
         color=color,
         fill_color=color,
         popup=popup
-        ).add_to(tokyomap)
-folium.map.Marker(
-    [35.710943,139.462252],
-    icon=DivIcon(
-        icon_size=(0,0),
-        icon_anchor=(20,20),
-        html='<div style="font-size: 10pt" style="text-align:center;">kokubunji<br>test</div>',
-        )
-    ).add_to(tokyomap)
-tokyomap.save(outfile="docs/tokyomap.html")
+        ).add_to(tokyo_map)
+
+for i in range(62):
+    dfgraph00202=dfmap30.loc[(dfmap30['number']==i),['label','count_7days','population','en','number','lat','lon']]
+    dfgraph00202=dfgraph00202.reset_index()
+    label00202=dfgraph00202['label'][0]
+    en00202=dfgraph00202['en'][0]
+    dfgraph00202['sevendays_ave_p']=round((dfgraph00202['count_7days']/7)/dfgraph00202['population']*100000,1)
+    sevendays_ave_p00201=dfgraph00202['sevendays_ave_p'][0]
+    text00202='''<div style="font-size: 10pt" style="text-align:center;">'''+en00202+'<br>'+str(sevendays_ave_p00201)+'</div>'
+    lat00202=dfgraph00202['lat'][0]
+    lon00202=dfgraph00202['lon'][0]
+    folium.map.Marker(
+        [lat00202,lon00202],
+        icon=DivIcon(
+            icon_size=(0,0),
+            icon_anchor=(20,20),
+            html=text00202
+            )
+        ).add_to(tokyo_map)
+tokyo_map.save(outfile="docs/tokyo_map.html")
 #/map表示
 
 print('last day is:')

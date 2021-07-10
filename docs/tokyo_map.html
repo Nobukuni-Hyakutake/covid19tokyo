@@ -1,0 +1,1861 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_48725d29dca149d0bad9161853b578b7 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_48725d29dca149d0bad9161853b578b7" ></div>
+        
+</body>
+<script>    
+    
+            var map_48725d29dca149d0bad9161853b578b7 = L.map(
+                "map_48725d29dca149d0bad9161853b578b7",
+                {
+                    center: [35.710943, 139.462252],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 11,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_51c9530fd70846b886c224c55449f78c = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var circle_f4ecfff2ba734a7c95c5f17e024e67b1 = L.circle(
+                [35.694003, 139.753634],
+                {"bubblingMouseEvents": true, "color": "#1b85b8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b85b8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1334.4, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_deb456336be34c5fbd52aefa829060f5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_24676f65f82249869d10ef5505e58c55 = $(`<div id="html_24676f65f82249869d10ef5505e58c55" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Chiyoda_g.html>Daily graph</h></div>`)[0];
+            popup_deb456336be34c5fbd52aefa829060f5.setContent(html_24676f65f82249869d10ef5505e58c55);
+        
+
+        circle_f4ecfff2ba734a7c95c5f17e024e67b1.bindPopup(popup_deb456336be34c5fbd52aefa829060f5)
+        ;
+
+        
+    
+    
+            var circle_3acc1d205cb047bba831ae30c5e2f904 = L.circle(
+                [35.670587, 139.772003],
+                {"bubblingMouseEvents": true, "color": "#1b85b8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b85b8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2043.1999999999998, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_328c94da58974a0f836e3fc609f60d76 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7efa4d15087e4abda87734b1115fc5f6 = $(`<div id="html_7efa4d15087e4abda87734b1115fc5f6" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Chuo_g.html>Daily graph</h></div>`)[0];
+            popup_328c94da58974a0f836e3fc609f60d76.setContent(html_7efa4d15087e4abda87734b1115fc5f6);
+        
+
+        circle_3acc1d205cb047bba831ae30c5e2f904.bindPopup(popup_328c94da58974a0f836e3fc609f60d76)
+        ;
+
+        
+    
+    
+            var circle_8b55b3da1f384f66b46bcae3305265c4 = L.circle(
+                [35.658071, 139.751599],
+                {"bubblingMouseEvents": true, "color": "#1b85b8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b85b8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1997.2, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_38be82aa6ffd4da5b2df3fac402e7c9c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_116dce71a1874af18ec749bf43228250 = $(`<div id="html_116dce71a1874af18ec749bf43228250" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Minato_g.html>Daily graph</h></div>`)[0];
+            popup_38be82aa6ffd4da5b2df3fac402e7c9c.setContent(html_116dce71a1874af18ec749bf43228250);
+        
+
+        circle_8b55b3da1f384f66b46bcae3305265c4.bindPopup(popup_38be82aa6ffd4da5b2df3fac402e7c9c)
+        ;
+
+        
+    
+    
+            var circle_cd0bbba31d5c4608bb7bb5c7817e6766 = L.circle(
+                [35.69389, 139.703463],
+                {"bubblingMouseEvents": true, "color": "#1b85b8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b85b8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2720.7999999999997, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_f4b0f2ec122d4520a22f3a453376431b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e92a714a6e0b45ee99ed0b84e91119b8 = $(`<div id="html_e92a714a6e0b45ee99ed0b84e91119b8" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Shinjuku_g.html>Daily graph</h></div>`)[0];
+            popup_f4b0f2ec122d4520a22f3a453376431b.setContent(html_e92a714a6e0b45ee99ed0b84e91119b8);
+        
+
+        circle_cd0bbba31d5c4608bb7bb5c7817e6766.bindPopup(popup_f4b0f2ec122d4520a22f3a453376431b)
+        ;
+
+        
+    
+    
+            var circle_2fe4fdcc0b1d4179a66f9c2ff9b69ae9 = L.circle(
+                [35.707976, 139.752473],
+                {"bubblingMouseEvents": true, "color": "#1b85b8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b85b8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1592.0, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_9437e3e6ff16459db3f14f2450c650e3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d022f35b9a8a4370a817185bcd8e963e = $(`<div id="html_d022f35b9a8a4370a817185bcd8e963e" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Bunkyo_g.html>Daily graph</h></div>`)[0];
+            popup_9437e3e6ff16459db3f14f2450c650e3.setContent(html_d022f35b9a8a4370a817185bcd8e963e);
+        
+
+        circle_2fe4fdcc0b1d4179a66f9c2ff9b69ae9.bindPopup(popup_9437e3e6ff16459db3f14f2450c650e3)
+        ;
+
+        
+    
+    
+            var circle_11a26da3bab24bd4afd840e7744fe4a2 = L.circle(
+                [35.712607, 139.779984],
+                {"bubblingMouseEvents": true, "color": "#1b85b8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b85b8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2154.0, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_4542c8c1800648c6abdd1ef9a25ef395 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3a18152829bb4dc490a5902a83c96537 = $(`<div id="html_3a18152829bb4dc490a5902a83c96537" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Taito_g.html>Daily graph</h></div>`)[0];
+            popup_4542c8c1800648c6abdd1ef9a25ef395.setContent(html_3a18152829bb4dc490a5902a83c96537);
+        
+
+        circle_11a26da3bab24bd4afd840e7744fe4a2.bindPopup(popup_4542c8c1800648c6abdd1ef9a25ef395)
+        ;
+
+        
+    
+    
+            var circle_84001848947c46d49a30316c8c95721e = L.circle(
+                [35.710724, 139.801497],
+                {"bubblingMouseEvents": true, "color": "#1b85b8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b85b8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1688.0, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_0fe80db5e7d14380b1e1f3649efb1667 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_da1006ac859e4d5399fb9e3e4a545265 = $(`<div id="html_da1006ac859e4d5399fb9e3e4a545265" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Sumida_g.html>Daily graph</h></div>`)[0];
+            popup_0fe80db5e7d14380b1e1f3649efb1667.setContent(html_da1006ac859e4d5399fb9e3e4a545265);
+        
+
+        circle_84001848947c46d49a30316c8c95721e.bindPopup(popup_0fe80db5e7d14380b1e1f3649efb1667)
+        ;
+
+        
+    
+    
+            var circle_81daae252c40422a807894b2134c270b = L.circle(
+                [35.672859, 139.817365],
+                {"bubblingMouseEvents": true, "color": "#1b85b8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b85b8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2069.6, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_404a66ad98624e3da8d28c400b0ce2e4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a1599dd9d8c845c4b34575d063e7d6f0 = $(`<div id="html_a1599dd9d8c845c4b34575d063e7d6f0" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Koto_g.html>Daily graph</h></div>`)[0];
+            popup_404a66ad98624e3da8d28c400b0ce2e4.setContent(html_a1599dd9d8c845c4b34575d063e7d6f0);
+        
+
+        circle_81daae252c40422a807894b2134c270b.bindPopup(popup_404a66ad98624e3da8d28c400b0ce2e4)
+        ;
+
+        
+    
+    
+            var circle_841dc570e1bb4369a7ce6a241a3fc2dc = L.circle(
+                [35.609066, 139.73025],
+                {"bubblingMouseEvents": true, "color": "#1b85b8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b85b8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1573.1999999999998, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_c86b5992bfd94d85a7a0830bde64752a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_cd7ac65463574ecf8561cc81f4672c86 = $(`<div id="html_cd7ac65463574ecf8561cc81f4672c86" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Shinagawa_g.html>Daily graph</h></div>`)[0];
+            popup_c86b5992bfd94d85a7a0830bde64752a.setContent(html_cd7ac65463574ecf8561cc81f4672c86);
+        
+
+        circle_841dc570e1bb4369a7ce6a241a3fc2dc.bindPopup(popup_c86b5992bfd94d85a7a0830bde64752a)
+        ;
+
+        
+    
+    
+            var circle_d74e215372be4f3a9b0065cd22512505 = L.circle(
+                [35.64141, 139.698118],
+                {"bubblingMouseEvents": true, "color": "#559e83", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#559e83", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1676.8000000000002, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_d0f014981c694145819ffcc753ee5846 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_416e5e3d20ea4d2f99cb7c684fe22cac = $(`<div id="html_416e5e3d20ea4d2f99cb7c684fe22cac" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Meguro_g.html>Daily graph</h></div>`)[0];
+            popup_d0f014981c694145819ffcc753ee5846.setContent(html_416e5e3d20ea4d2f99cb7c684fe22cac);
+        
+
+        circle_d74e215372be4f3a9b0065cd22512505.bindPopup(popup_d0f014981c694145819ffcc753ee5846)
+        ;
+
+        
+    
+    
+            var circle_068d2396d82c4a9ab8af38a8724eeb44 = L.circle(
+                [35.56126, 139.715987],
+                {"bubblingMouseEvents": true, "color": "#1b85b8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b85b8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1476.0, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_5d7d592881824d63adbfa41e56b6be92 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b61ebf885f2443069cad33e66ae5c946 = $(`<div id="html_b61ebf885f2443069cad33e66ae5c946" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Ota_g.html>Daily graph</h></div>`)[0];
+            popup_5d7d592881824d63adbfa41e56b6be92.setContent(html_b61ebf885f2443069cad33e66ae5c946);
+        
+
+        circle_068d2396d82c4a9ab8af38a8724eeb44.bindPopup(popup_5d7d592881824d63adbfa41e56b6be92)
+        ;
+
+        
+    
+    
+            var circle_8ba77ec5c7874f319fd98b525f04161a = L.circle(
+                [35.646481, 139.653208],
+                {"bubblingMouseEvents": true, "color": "#1b85b8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b85b8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1482.4, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_7a1b568aeb734171a789a5ddf3701caa = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9438c3e2ba1740a09837273c8c9812cb = $(`<div id="html_9438c3e2ba1740a09837273c8c9812cb" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Setagaya_g.html>Daily graph</h></div>`)[0];
+            popup_7a1b568aeb734171a789a5ddf3701caa.setContent(html_9438c3e2ba1740a09837273c8c9812cb);
+        
+
+        circle_8ba77ec5c7874f319fd98b525f04161a.bindPopup(popup_7a1b568aeb734171a789a5ddf3701caa)
+        ;
+
+        
+    
+    
+            var circle_39da1cae123f4a229e180b3b956d7a27 = L.circle(
+                [35.663982, 139.697948],
+                {"bubblingMouseEvents": true, "color": "#1b85b8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b85b8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2090.0, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_0113dec0788040d0b746feee11853579 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f8a4a184860042689188b911bec2d4e2 = $(`<div id="html_f8a4a184860042689188b911bec2d4e2" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Shibuya_g.html>Daily graph</h></div>`)[0];
+            popup_0113dec0788040d0b746feee11853579.setContent(html_f8a4a184860042689188b911bec2d4e2);
+        
+
+        circle_39da1cae123f4a229e180b3b956d7a27.bindPopup(popup_0113dec0788040d0b746feee11853579)
+        ;
+
+        
+    
+    
+            var circle_d093d7c4478f4dc7971c23aee47c7905 = L.circle(
+                [35.707268, 139.663738],
+                {"bubblingMouseEvents": true, "color": "#1b85b8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b85b8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2732.4, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_988d32e91fed437b96141d39e94d48d7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8af3b94fa1914593a36b12afc5e80946 = $(`<div id="html_8af3b94fa1914593a36b12afc5e80946" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Nakano_g.html>Daily graph</h></div>`)[0];
+            popup_988d32e91fed437b96141d39e94d48d7.setContent(html_8af3b94fa1914593a36b12afc5e80946);
+        
+
+        circle_d093d7c4478f4dc7971c23aee47c7905.bindPopup(popup_988d32e91fed437b96141d39e94d48d7)
+        ;
+
+        
+    
+    
+            var circle_13c1ba7c2a984fc2b2064d64d4dde723 = L.circle(
+                [35.699546, 139.636414],
+                {"bubblingMouseEvents": true, "color": "#1b85b8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b85b8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1616.3999999999999, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_3cd3c8cd570e4d19a6fb3aba43cae05b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fc95f57cb8c049c0b52ac8c0f0024500 = $(`<div id="html_fc95f57cb8c049c0b52ac8c0f0024500" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Suginami_g.html>Daily graph</h></div>`)[0];
+            popup_3cd3c8cd570e4d19a6fb3aba43cae05b.setContent(html_fc95f57cb8c049c0b52ac8c0f0024500);
+        
+
+        circle_13c1ba7c2a984fc2b2064d64d4dde723.bindPopup(popup_3cd3c8cd570e4d19a6fb3aba43cae05b)
+        ;
+
+        
+    
+    
+            var circle_4b394ea5b6b1473b9052b729250c8d70 = L.circle(
+                [35.732437, 139.715469],
+                {"bubblingMouseEvents": true, "color": "#559e83", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#559e83", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1681.2, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_f5e25fb1e8304033a3520b67ddd70fb4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_48c51087fc4548fdbb36349c762f5a97 = $(`<div id="html_48c51087fc4548fdbb36349c762f5a97" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Toshima_g.html>Daily graph</h></div>`)[0];
+            popup_f5e25fb1e8304033a3520b67ddd70fb4.setContent(html_48c51087fc4548fdbb36349c762f5a97);
+        
+
+        circle_4b394ea5b6b1473b9052b729250c8d70.bindPopup(popup_f5e25fb1e8304033a3520b67ddd70fb4)
+        ;
+
+        
+    
+    
+            var circle_1d15e62f3c324b3589f883bc31cb87c1 = L.circle(
+                [35.752805, 139.733657],
+                {"bubblingMouseEvents": true, "color": "#559e83", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#559e83", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1424.0, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_fd63ffd5ccb442d5b3952b976d20523e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6c8f925c1e3c4d5e97e39b5b3885ae3a = $(`<div id="html_6c8f925c1e3c4d5e97e39b5b3885ae3a" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Kita_g.html>Daily graph</h></div>`)[0];
+            popup_fd63ffd5ccb442d5b3952b976d20523e.setContent(html_6c8f925c1e3c4d5e97e39b5b3885ae3a);
+        
+
+        circle_1d15e62f3c324b3589f883bc31cb87c1.bindPopup(popup_fd63ffd5ccb442d5b3952b976d20523e)
+        ;
+
+        
+    
+    
+            var circle_da77a6e6a761476f9b931ad7aed09a7a = L.circle(
+                [35.736083, 139.783372],
+                {"bubblingMouseEvents": true, "color": "#559e83", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#559e83", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1252.8, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_e492568a379d44d1af558f342ed05905 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f1bac610a1cf45d08c861176f2e4fdb5 = $(`<div id="html_f1bac610a1cf45d08c861176f2e4fdb5" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Arakawa_g.html>Daily graph</h></div>`)[0];
+            popup_e492568a379d44d1af558f342ed05905.setContent(html_f1bac610a1cf45d08c861176f2e4fdb5);
+        
+
+        circle_da77a6e6a761476f9b931ad7aed09a7a.bindPopup(popup_e492568a379d44d1af558f342ed05905)
+        ;
+
+        
+    
+    
+            var circle_a189821612094eb5a563ca6088d1e631 = L.circle(
+                [35.751245, 139.709246],
+                {"bubblingMouseEvents": true, "color": "#1b85b8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b85b8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1456.0, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_ed3480960ee6421083a9c2eeb1aee22a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3b7bd3297eae43c6a7cf788437627779 = $(`<div id="html_3b7bd3297eae43c6a7cf788437627779" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Itabashi_g.html>Daily graph</h></div>`)[0];
+            popup_ed3480960ee6421083a9c2eeb1aee22a.setContent(html_3b7bd3297eae43c6a7cf788437627779);
+        
+
+        circle_a189821612094eb5a563ca6088d1e631.bindPopup(popup_ed3480960ee6421083a9c2eeb1aee22a)
+        ;
+
+        
+    
+    
+            var circle_05474ebb970542d1ae438d4112b2e8d5 = L.circle(
+                [35.7356, 139.651725],
+                {"bubblingMouseEvents": true, "color": "#559e83", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#559e83", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1022.4, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_44483b8534744b5ba5887d8cfb0db5cd = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7b9ee5e83a9e4dd980d77b9e3e1acd53 = $(`<div id="html_7b9ee5e83a9e4dd980d77b9e3e1acd53" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Nerima_g.html>Daily graph</h></div>`)[0];
+            popup_44483b8534744b5ba5887d8cfb0db5cd.setContent(html_7b9ee5e83a9e4dd980d77b9e3e1acd53);
+        
+
+        circle_05474ebb970542d1ae438d4112b2e8d5.bindPopup(popup_44483b8534744b5ba5887d8cfb0db5cd)
+        ;
+
+        
+    
+    
+            var circle_935e645fa79048a6b2dd6f3b3020941b = L.circle(
+                [35.774945, 139.804584],
+                {"bubblingMouseEvents": true, "color": "#1b85b8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b85b8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1446.3999999999999, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_c992aa78b49e476e82804ee551dc4019 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b14a37f7fbc741b1a0abbb7d3bee0260 = $(`<div id="html_b14a37f7fbc741b1a0abbb7d3bee0260" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Adachi_g.html>Daily graph</h></div>`)[0];
+            popup_c992aa78b49e476e82804ee551dc4019.setContent(html_b14a37f7fbc741b1a0abbb7d3bee0260);
+        
+
+        circle_935e645fa79048a6b2dd6f3b3020941b.bindPopup(popup_c992aa78b49e476e82804ee551dc4019)
+        ;
+
+        
+    
+    
+            var circle_31d72e89d71041029e583f256209ca65 = L.circle(
+                [35.74343, 139.847213],
+                {"bubblingMouseEvents": true, "color": "#1b85b8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b85b8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 895.6, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_67b5b431e826486d93f55a71994d6857 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_03b7cc100e9a4ce3a3ab805d39d2d3e4 = $(`<div id="html_03b7cc100e9a4ce3a3ab805d39d2d3e4" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Katsushika_g.html>Daily graph</h></div>`)[0];
+            popup_67b5b431e826486d93f55a71994d6857.setContent(html_03b7cc100e9a4ce3a3ab805d39d2d3e4);
+        
+
+        circle_31d72e89d71041029e583f256209ca65.bindPopup(popup_67b5b431e826486d93f55a71994d6857)
+        ;
+
+        
+    
+    
+            var circle_104e18b0a2634a3d81f1df2d7530956b = L.circle(
+                [35.706648, 139.868312],
+                {"bubblingMouseEvents": true, "color": "#1b85b8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b85b8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1342.8, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_3c07e888579742ecbd8842fae39d3c29 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5900243a7bf24d64a20e12d347d36b24 = $(`<div id="html_5900243a7bf24d64a20e12d347d36b24" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Edogawa_g.html>Daily graph</h></div>`)[0];
+            popup_3c07e888579742ecbd8842fae39d3c29.setContent(html_5900243a7bf24d64a20e12d347d36b24);
+        
+
+        circle_104e18b0a2634a3d81f1df2d7530956b.bindPopup(popup_3c07e888579742ecbd8842fae39d3c29)
+        ;
+
+        
+    
+    
+            var circle_8946efba38f3484097319002b6d90e9c = L.circle(
+                [35.66657, 139.316075],
+                {"bubblingMouseEvents": true, "color": "#c3cb71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c3cb71", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 462.40000000000003, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_bdcdee7caec04a6dacfb62c7865f99b9 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7fc3e122f4e0479aa79a41797f47723f = $(`<div id="html_7fc3e122f4e0479aa79a41797f47723f" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Hachioji_g.html>Daily graph</h></div>`)[0];
+            popup_bdcdee7caec04a6dacfb62c7865f99b9.setContent(html_7fc3e122f4e0479aa79a41797f47723f);
+        
+
+        circle_8946efba38f3484097319002b6d90e9c.bindPopup(popup_bdcdee7caec04a6dacfb62c7865f99b9)
+        ;
+
+        
+    
+    
+            var circle_d37c916656c94ab4b77aac08c556e8d3 = L.circle(
+                [35.713981, 139.407846],
+                {"bubblingMouseEvents": true, "color": "#559e83", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#559e83", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 652.0, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_208b37440bed4ff68c2f688ceaa83eb2 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4ed13b51553e43c08a1fc7b4bfac0065 = $(`<div id="html_4ed13b51553e43c08a1fc7b4bfac0065" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Tachikawa_g.html>Daily graph</h></div>`)[0];
+            popup_208b37440bed4ff68c2f688ceaa83eb2.setContent(html_4ed13b51553e43c08a1fc7b4bfac0065);
+        
+
+        circle_d37c916656c94ab4b77aac08c556e8d3.bindPopup(popup_208b37440bed4ff68c2f688ceaa83eb2)
+        ;
+
+        
+    
+    
+            var circle_4498ff3561cf4e7188586c68736f0a53 = L.circle(
+                [35.717837, 139.565938],
+                {"bubblingMouseEvents": true, "color": "#559e83", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#559e83", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1089.2, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_025a057b46c34bee82d8c0bce882d675 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f0306aeb45ea4aaba2630acbce32619d = $(`<div id="html_f0306aeb45ea4aaba2630acbce32619d" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Musashino_g.html>Daily graph</h></div>`)[0];
+            popup_025a057b46c34bee82d8c0bce882d675.setContent(html_f0306aeb45ea4aaba2630acbce32619d);
+        
+
+        circle_4498ff3561cf4e7188586c68736f0a53.bindPopup(popup_025a057b46c34bee82d8c0bce882d675)
+        ;
+
+        
+    
+    
+            var circle_b74aafbdd7434ad7894d651de4d8678c = L.circle(
+                [35.683308, 139.559883],
+                {"bubblingMouseEvents": true, "color": "#559e83", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#559e83", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1040.0, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_c9c9ccc1f11f47be97172bbd45dd0789 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_72e830fd92c14a0d9ed735ba0751e66a = $(`<div id="html_72e830fd92c14a0d9ed735ba0751e66a" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Mitaka_g.html>Daily graph</h></div>`)[0];
+            popup_c9c9ccc1f11f47be97172bbd45dd0789.setContent(html_72e830fd92c14a0d9ed735ba0751e66a);
+        
+
+        circle_b74aafbdd7434ad7894d651de4d8678c.bindPopup(popup_c9c9ccc1f11f47be97172bbd45dd0789)
+        ;
+
+        
+    
+    
+            var circle_88096e59fddc4d60bd8b2964128d7f94 = L.circle(
+                [35.788171, 139.274994],
+                {"bubblingMouseEvents": true, "color": "#1b85b8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b85b8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 631.5999999999999, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_07a8ecdf4c0f4c4590e40dc495702287 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d013eeeeab8841a99ddaa82834d34cab = $(`<div id="html_d013eeeeab8841a99ddaa82834d34cab" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Ome_g.html>Daily graph</h></div>`)[0];
+            popup_07a8ecdf4c0f4c4590e40dc495702287.setContent(html_d013eeeeab8841a99ddaa82834d34cab);
+        
+
+        circle_88096e59fddc4d60bd8b2964128d7f94.bindPopup(popup_07a8ecdf4c0f4c4590e40dc495702287)
+        ;
+
+        
+    
+    
+            var circle_db6fa9be9701477ca93f144df4ea1ac1 = L.circle(
+                [35.668921, 139.477663],
+                {"bubblingMouseEvents": true, "color": "#1b85b8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b85b8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 799.2, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_631d4a8aa47f453daabdd256ff6bd450 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4113f0b0b1cb4948be6680848fa54bd2 = $(`<div id="html_4113f0b0b1cb4948be6680848fa54bd2" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Fuchu_g.html>Daily graph</h></div>`)[0];
+            popup_631d4a8aa47f453daabdd256ff6bd450.setContent(html_4113f0b0b1cb4948be6680848fa54bd2);
+        
+
+        circle_db6fa9be9701477ca93f144df4ea1ac1.bindPopup(popup_631d4a8aa47f453daabdd256ff6bd450)
+        ;
+
+        
+    
+    
+            var circle_8f871defb8da4306966f021dfed1ada2 = L.circle(
+                [35.705705, 139.353773],
+                {"bubblingMouseEvents": true, "color": "#559e83", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#559e83", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 423.2, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_9d703988215a44909e354afc3b79b5d9 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f9d3ea90d1674428b9dc5570d8ae39e5 = $(`<div id="html_f9d3ea90d1674428b9dc5570d8ae39e5" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Akishima_g.html>Daily graph</h></div>`)[0];
+            popup_9d703988215a44909e354afc3b79b5d9.setContent(html_f9d3ea90d1674428b9dc5570d8ae39e5);
+        
+
+        circle_8f871defb8da4306966f021dfed1ada2.bindPopup(popup_9d703988215a44909e354afc3b79b5d9)
+        ;
+
+        
+    
+    
+            var circle_b349901349ec4e04b8cda9ccbcd63aa9 = L.circle(
+                [35.650628, 139.540683],
+                {"bubblingMouseEvents": true, "color": "#1b85b8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b85b8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 962.0, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_e42258b3add640cca42f96a4c0449533 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5c0c67b91ce9451580f2b3dc6840f0ae = $(`<div id="html_5c0c67b91ce9451580f2b3dc6840f0ae" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Chofu_g.html>Daily graph</h></div>`)[0];
+            popup_e42258b3add640cca42f96a4c0449533.setContent(html_5c0c67b91ce9451580f2b3dc6840f0ae);
+        
+
+        circle_b349901349ec4e04b8cda9ccbcd63aa9.bindPopup(popup_e42258b3add640cca42f96a4c0449533)
+        ;
+
+        
+    
+    
+            var circle_36c97ca78a8f4a629f181e88468cdfe1 = L.circle(
+                [35.546559, 139.438527],
+                {"bubblingMouseEvents": true, "color": "#1b85b8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b85b8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 718.4000000000001, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_404d2abfed974b82a7c1282dd39d4cf0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d23b2344811c4617a8589e96605e51c0 = $(`<div id="html_d23b2344811c4617a8589e96605e51c0" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Machida_g.html>Daily graph</h></div>`)[0];
+            popup_404d2abfed974b82a7c1282dd39d4cf0.setContent(html_d23b2344811c4617a8589e96605e51c0);
+        
+
+        circle_36c97ca78a8f4a629f181e88468cdfe1.bindPopup(popup_404d2abfed974b82a7c1282dd39d4cf0)
+        ;
+
+        
+    
+    
+            var circle_b2d28d93b1a147afa7564ceae49f9eb0 = L.circle(
+                [35.699479, 139.502989],
+                {"bubblingMouseEvents": true, "color": "#c3cb71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c3cb71", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 752.4, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_91621b69c9bd46e497bb453919038b63 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_39f13594392e4eb9a46bfde4754bea01 = $(`<div id="html_39f13594392e4eb9a46bfde4754bea01" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Koganei_g.html>Daily graph</h></div>`)[0];
+            popup_91621b69c9bd46e497bb453919038b63.setContent(html_39f13594392e4eb9a46bfde4754bea01);
+        
+
+        circle_b2d28d93b1a147afa7564ceae49f9eb0.bindPopup(popup_91621b69c9bd46e497bb453919038b63)
+        ;
+
+        
+    
+    
+            var circle_8d5673d9548f4052b538b7aaaa82138b = L.circle(
+                [35.728496, 139.477474],
+                {"bubblingMouseEvents": true, "color": "#559e83", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#559e83", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 492.8, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_886df7431df64d2ca9c324e9c80363f1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_02a9177656814ab9806c09167ce0c5e3 = $(`<div id="html_02a9177656814ab9806c09167ce0c5e3" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Kodaira_g.html>Daily graph</h></div>`)[0];
+            popup_886df7431df64d2ca9c324e9c80363f1.setContent(html_02a9177656814ab9806c09167ce0c5e3);
+        
+
+        circle_8d5673d9548f4052b538b7aaaa82138b.bindPopup(popup_886df7431df64d2ca9c324e9c80363f1)
+        ;
+
+        
+    
+    
+            var circle_04153d0591b845cba4ca892ebe1d3871 = L.circle(
+                [35.671347, 139.394981],
+                {"bubblingMouseEvents": true, "color": "#c3cb71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c3cb71", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 322.0, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_a24c4e18f3b34dbe97f47bc2f04d60be = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9180e4b6f9204e6599f6202c9cde2859 = $(`<div id="html_9180e4b6f9204e6599f6202c9cde2859" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Hino_g.html>Daily graph</h></div>`)[0];
+            popup_a24c4e18f3b34dbe97f47bc2f04d60be.setContent(html_9180e4b6f9204e6599f6202c9cde2859);
+        
+
+        circle_04153d0591b845cba4ca892ebe1d3871.bindPopup(popup_a24c4e18f3b34dbe97f47bc2f04d60be)
+        ;
+
+        
+    
+    
+            var circle_cd003770d3dc4cf1a2df71471aced4dc = L.circle(
+                [35.754624, 139.468484],
+                {"bubblingMouseEvents": true, "color": "#1b85b8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b85b8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 608.4000000000001, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_0f2d4a3ebc814812a3072efbccdd332c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d3731aa69fb44e7090bb415ae3a40edf = $(`<div id="html_d3731aa69fb44e7090bb415ae3a40edf" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Higashimurayama_g.html>Daily graph</h></div>`)[0];
+            popup_0f2d4a3ebc814812a3072efbccdd332c.setContent(html_d3731aa69fb44e7090bb415ae3a40edf);
+        
+
+        circle_cd003770d3dc4cf1a2df71471aced4dc.bindPopup(popup_0f2d4a3ebc814812a3072efbccdd332c)
+        ;
+
+        
+    
+    
+            var circle_e1335075fef54402b3ffb6c01b5df5b7 = L.circle(
+                [35.710943, 139.462252],
+                {"bubblingMouseEvents": true, "color": "#559e83", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#559e83", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 671.2, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_c6cfcee6ae53408c83ab47ba64ee13f6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f120d0ddd7d547fab6ff93196348a060 = $(`<div id="html_f120d0ddd7d547fab6ff93196348a060" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Kokubunji_g.html>Daily graph</h></div>`)[0];
+            popup_c6cfcee6ae53408c83ab47ba64ee13f6.setContent(html_f120d0ddd7d547fab6ff93196348a060);
+        
+
+        circle_e1335075fef54402b3ffb6c01b5df5b7.bindPopup(popup_c6cfcee6ae53408c83ab47ba64ee13f6)
+        ;
+
+        
+    
+    
+            var circle_31a694d6ccae49ba9208b4964b673359 = L.circle(
+                [35.683912, 139.441366],
+                {"bubblingMouseEvents": true, "color": "#1b85b8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b85b8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1101.2, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_c583c0da43634cfe9de20c8b308915d9 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_94d620e97bef46d2a88ce7da6414c7aa = $(`<div id="html_94d620e97bef46d2a88ce7da6414c7aa" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Kunitachi_g.html>Daily graph</h></div>`)[0];
+            popup_c583c0da43634cfe9de20c8b308915d9.setContent(html_94d620e97bef46d2a88ce7da6414c7aa);
+        
+
+        circle_31a694d6ccae49ba9208b4964b673359.bindPopup(popup_c583c0da43634cfe9de20c8b308915d9)
+        ;
+
+        
+    
+    
+            var circle_7b2bfcae57ea43889d5e9f973dd7378d = L.circle(
+                [35.738601, 139.326744],
+                {"bubblingMouseEvents": true, "color": "#1b85b8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b85b8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 763.6, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_6d6253151d7347b4959ab6708ef21a00 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_586582b424f8475cb36fb4a62cbe3686 = $(`<div id="html_586582b424f8475cb36fb4a62cbe3686" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Fussa_g.html>Daily graph</h></div>`)[0];
+            popup_6d6253151d7347b4959ab6708ef21a00.setContent(html_586582b424f8475cb36fb4a62cbe3686);
+        
+
+        circle_7b2bfcae57ea43889d5e9f973dd7378d.bindPopup(popup_6d6253151d7347b4959ab6708ef21a00)
+        ;
+
+        
+    
+    
+            var circle_e9b5dc6ee190462fa6c7c9becd2a3d32 = L.circle(
+                [35.634814, 139.578696],
+                {"bubblingMouseEvents": true, "color": "#1b85b8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b85b8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 960.8, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_97d96b87b33840f2a018b98609d90ab7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d7ed112e30c44aebb13adb67717c15aa = $(`<div id="html_d7ed112e30c44aebb13adb67717c15aa" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Komae_g.html>Daily graph</h></div>`)[0];
+            popup_97d96b87b33840f2a018b98609d90ab7.setContent(html_d7ed112e30c44aebb13adb67717c15aa);
+        
+
+        circle_e9b5dc6ee190462fa6c7c9becd2a3d32.bindPopup(popup_97d96b87b33840f2a018b98609d90ab7)
+        ;
+
+        
+    
+    
+            var circle_ff45005e13254ad39284f67354861b40 = L.circle(
+                [35.745328, 139.426591],
+                {"bubblingMouseEvents": true, "color": "#559e83", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#559e83", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 422.0, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_08e84b0938044fbc952dbc77cf6fa6e9 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_af78a0f37366449ebae9236b2d0b9c9c = $(`<div id="html_af78a0f37366449ebae9236b2d0b9c9c" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Higashiyamato_g.html>Daily graph</h></div>`)[0];
+            popup_08e84b0938044fbc952dbc77cf6fa6e9.setContent(html_af78a0f37366449ebae9236b2d0b9c9c);
+        
+
+        circle_ff45005e13254ad39284f67354861b40.bindPopup(popup_08e84b0938044fbc952dbc77cf6fa6e9)
+        ;
+
+        
+    
+    
+            var circle_40de690ff8e14b6c8d11a17ed2467a84 = L.circle(
+                [35.785761, 139.526422],
+                {"bubblingMouseEvents": true, "color": "#c3cb71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c3cb71", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 536.0, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_c29e25679bff4a1ebbdb6a9f027f4089 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6bd5fcd9380e414a841cfa1bf2a6024e = $(`<div id="html_6bd5fcd9380e414a841cfa1bf2a6024e" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Kiyose_g.html>Daily graph</h></div>`)[0];
+            popup_c29e25679bff4a1ebbdb6a9f027f4089.setContent(html_6bd5fcd9380e414a841cfa1bf2a6024e);
+        
+
+        circle_40de690ff8e14b6c8d11a17ed2467a84.bindPopup(popup_c29e25679bff4a1ebbdb6a9f027f4089)
+        ;
+
+        
+    
+    
+            var circle_dc8b7c23e2b4490a94ad5df8bdfe962a = L.circle(
+                [35.757992, 139.529673],
+                {"bubblingMouseEvents": true, "color": "#1b85b8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b85b8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 958.0, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_c95d37572f2145c58556ca006ffc75d2 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7f177573b82541deb9ba8795d70a764d = $(`<div id="html_7f177573b82541deb9ba8795d70a764d" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Higashikurume_g.html>Daily graph</h></div>`)[0];
+            popup_c95d37572f2145c58556ca006ffc75d2.setContent(html_7f177573b82541deb9ba8795d70a764d);
+        
+
+        circle_dc8b7c23e2b4490a94ad5df8bdfe962a.bindPopup(popup_c95d37572f2145c58556ca006ffc75d2)
+        ;
+
+        
+    
+    
+            var circle_e38d8a468510490795e6728b681453c8 = L.circle(
+                [35.754906, 139.387421],
+                {"bubblingMouseEvents": true, "color": "#1b85b8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b85b8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 552.8, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_1a35c9d029e7406a95f562c3188de0aa = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a872b58b516b4fb19bfc4c3ae394ccaa = $(`<div id="html_a872b58b516b4fb19bfc4c3ae394ccaa" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Musashimurayama_g.html>Daily graph</h></div>`)[0];
+            popup_1a35c9d029e7406a95f562c3188de0aa.setContent(html_a872b58b516b4fb19bfc4c3ae394ccaa);
+        
+
+        circle_e38d8a468510490795e6728b681453c8.bindPopup(popup_1a35c9d029e7406a95f562c3188de0aa)
+        ;
+
+        
+    
+    
+            var circle_07838a1989504abd9d60f534a331aa14 = L.circle(
+                [35.636959, 139.446366],
+                {"bubblingMouseEvents": true, "color": "#1b85b8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b85b8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 645.1999999999999, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_fcb7513f623b4320967202e370b9baf6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_de082d558ba54b6f9753b2421cdf6769 = $(`<div id="html_de082d558ba54b6f9753b2421cdf6769" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Tama_g.html>Daily graph</h></div>`)[0];
+            popup_fcb7513f623b4320967202e370b9baf6.setContent(html_de082d558ba54b6f9753b2421cdf6769);
+        
+
+        circle_07838a1989504abd9d60f534a331aa14.bindPopup(popup_fcb7513f623b4320967202e370b9baf6)
+        ;
+
+        
+    
+    
+            var circle_508ca69952384c4585e2fb3ee09d8dc4 = L.circle(
+                [35.637938, 139.504603],
+                {"bubblingMouseEvents": true, "color": "#c3cb71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c3cb71", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 262.0, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_f6ec57f1fc894173b2af302e848d97e0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1f665577fd8f4625b414f49e7537dd7d = $(`<div id="html_1f665577fd8f4625b414f49e7537dd7d" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Inagi_g.html>Daily graph</h></div>`)[0];
+            popup_f6ec57f1fc894173b2af302e848d97e0.setContent(html_1f665577fd8f4625b414f49e7537dd7d);
+        
+
+        circle_508ca69952384c4585e2fb3ee09d8dc4.bindPopup(popup_f6ec57f1fc894173b2af302e848d97e0)
+        ;
+
+        
+    
+    
+            var circle_6160e392a61840adb14ef6d8c6e9cfe9 = L.circle(
+                [35.767168, 139.311042],
+                {"bubblingMouseEvents": true, "color": "#1b85b8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b85b8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 506.0, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_16bfae5d9bd54e5facd73a5fd6fdd203 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e305ad3525724fc9a5871b1a42879b59 = $(`<div id="html_e305ad3525724fc9a5871b1a42879b59" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Hamura_g.html>Daily graph</h></div>`)[0];
+            popup_16bfae5d9bd54e5facd73a5fd6fdd203.setContent(html_e305ad3525724fc9a5871b1a42879b59);
+        
+
+        circle_6160e392a61840adb14ef6d8c6e9cfe9.bindPopup(popup_16bfae5d9bd54e5facd73a5fd6fdd203)
+        ;
+
+        
+    
+    
+            var circle_cdeeb6a2f23b4c0b833f83bee7294f51 = L.circle(
+                [35.728959, 139.294046],
+                {"bubblingMouseEvents": true, "color": "#1b85b8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b85b8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 595.2, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_3d308b05f30b46848ada849297c0f1b1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1f95636f36fe4ca28690561d8bd637fd = $(`<div id="html_1f95636f36fe4ca28690561d8bd637fd" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Akiruno_g.html>Daily graph</h></div>`)[0];
+            popup_3d308b05f30b46848ada849297c0f1b1.setContent(html_1f95636f36fe4ca28690561d8bd637fd);
+        
+
+        circle_cdeeb6a2f23b4c0b833f83bee7294f51.bindPopup(popup_3d308b05f30b46848ada849297c0f1b1)
+        ;
+
+        
+    
+    
+            var circle_9fa0fc394ec1449dbeca0b29618e852a = L.circle(
+                [35.725499, 139.538159],
+                {"bubblingMouseEvents": true, "color": "#1b85b8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b85b8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 819.2, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_8dbb759c9b1c4a22b2badab01e249534 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_27e0dee9763f4e2e8b79145db87ff660 = $(`<div id="html_27e0dee9763f4e2e8b79145db87ff660" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Nishitokyo_g.html>Daily graph</h></div>`)[0];
+            popup_8dbb759c9b1c4a22b2badab01e249534.setContent(html_27e0dee9763f4e2e8b79145db87ff660);
+        
+
+        circle_9fa0fc394ec1449dbeca0b29618e852a.bindPopup(popup_8dbb759c9b1c4a22b2badab01e249534)
+        ;
+
+        
+    
+    
+            var circle_c02d2f0ddc9b4d19904bace4e517d77f = L.circle(
+                [35.771989, 139.354054],
+                {"bubblingMouseEvents": true, "color": "#559e83", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#559e83", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_189279b040854845a5da5555ee6eb163 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_591f9721d17f41b0babcc9a7eae471c6 = $(`<div id="html_591f9721d17f41b0babcc9a7eae471c6" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Mizuho_g.html>Daily graph</h></div>`)[0];
+            popup_189279b040854845a5da5555ee6eb163.setContent(html_591f9721d17f41b0babcc9a7eae471c6);
+        
+
+        circle_c02d2f0ddc9b4d19904bace4e517d77f.bindPopup(popup_189279b040854845a5da5555ee6eb163)
+        ;
+
+        
+    
+    
+            var circle_97853e288ff345f7acd8296df26af570 = L.circle(
+                [35.742115, 139.257405],
+                {"bubblingMouseEvents": true, "color": "#559e83", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#559e83", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 479.20000000000005, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_40127b5b2ef24cf8a8115038f35c7242 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_74aa65693bf14d9db1297e03e15b63a9 = $(`<div id="html_74aa65693bf14d9db1297e03e15b63a9" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Hinode_g.html>Daily graph</h></div>`)[0];
+            popup_40127b5b2ef24cf8a8115038f35c7242.setContent(html_74aa65693bf14d9db1297e03e15b63a9);
+        
+
+        circle_97853e288ff345f7acd8296df26af570.bindPopup(popup_40127b5b2ef24cf8a8115038f35c7242)
+        ;
+
+        
+    
+    
+            var circle_4de0d6c588ff4a1baa7b5a597fdf8ad5 = L.circle(
+                [35.72684, 139.148852],
+                {"bubblingMouseEvents": true, "color": "#559e83", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#559e83", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_5193e3af219a4e1dbbe5ca47eab5d211 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_67241f78309a4c5fb00f84c932e29f1f = $(`<div id="html_67241f78309a4c5fb00f84c932e29f1f" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Hinohara_g.html>Daily graph</h></div>`)[0];
+            popup_5193e3af219a4e1dbbe5ca47eab5d211.setContent(html_67241f78309a4c5fb00f84c932e29f1f);
+        
+
+        circle_4de0d6c588ff4a1baa7b5a597fdf8ad5.bindPopup(popup_5193e3af219a4e1dbbe5ca47eab5d211)
+        ;
+
+        
+    
+    
+            var circle_7c46e2371ce449b294833b9d8e3e5261 = L.circle(
+                [35.80952, 139.096214],
+                {"bubblingMouseEvents": true, "color": "#559e83", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#559e83", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_8f477cd2bb504292a8bbf2659134ce42 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_31c32ea16c014736b25d3378becfe91f = $(`<div id="html_31c32ea16c014736b25d3378becfe91f" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Okutama_g.html>Daily graph</h></div>`)[0];
+            popup_8f477cd2bb504292a8bbf2659134ce42.setContent(html_31c32ea16c014736b25d3378becfe91f);
+        
+
+        circle_7c46e2371ce449b294833b9d8e3e5261.bindPopup(popup_8f477cd2bb504292a8bbf2659134ce42)
+        ;
+
+        
+    
+    
+            var circle_1a7efc27be0e4ff2a307765e9e225470 = L.circle(
+                [34.750058, 139.355619],
+                {"bubblingMouseEvents": true, "color": "#559e83", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#559e83", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12725.2, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_d2509cf9090c4c4e892c348a6b92ee19 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_eec7799cfbff41b68f287b22640a2896 = $(`<div id="html_eec7799cfbff41b68f287b22640a2896" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Oshima_g.html>Daily graph</h></div>`)[0];
+            popup_d2509cf9090c4c4e892c348a6b92ee19.setContent(html_eec7799cfbff41b68f287b22640a2896);
+        
+
+        circle_1a7efc27be0e4ff2a307765e9e225470.bindPopup(popup_d2509cf9090c4c4e892c348a6b92ee19)
+        ;
+
+        
+    
+    
+            var circle_108c1e2bab1d47d297b2127d08535328 = L.circle(
+                [34.529354, 139.282584],
+                {"bubblingMouseEvents": true, "color": "#559e83", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#559e83", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_f8ba8f3f30d748128a5d8056668d45be = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1bb442bdf5624ebaac6ef47ed29fe9e0 = $(`<div id="html_1bb442bdf5624ebaac6ef47ed29fe9e0" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Toshima_g.html>Daily graph</h></div>`)[0];
+            popup_f8ba8f3f30d748128a5d8056668d45be.setContent(html_1bb442bdf5624ebaac6ef47ed29fe9e0);
+        
+
+        circle_108c1e2bab1d47d297b2127d08535328.bindPopup(popup_f8ba8f3f30d748128a5d8056668d45be)
+        ;
+
+        
+    
+    
+            var circle_c058307c27f243369d2b465f77b47957 = L.circle(
+                [34.377138, 139.256556],
+                {"bubblingMouseEvents": true, "color": "#c3cb71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c3cb71", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_d4a645943aa4417a85112acc0418259f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_cdaa72adf660445183382df789c56162 = $(`<div id="html_cdaa72adf660445183382df789c56162" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Niijima_g.html>Daily graph</h></div>`)[0];
+            popup_d4a645943aa4417a85112acc0418259f.setContent(html_cdaa72adf660445183382df789c56162);
+        
+
+        circle_c058307c27f243369d2b465f77b47957.bindPopup(popup_d4a645943aa4417a85112acc0418259f)
+        ;
+
+        
+    
+    
+            var circle_9e33873c4be6406b99c556db7fa9754e = L.circle(
+                [34.205371, 139.134426],
+                {"bubblingMouseEvents": true, "color": "#559e83", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#559e83", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_640979d4c3864686b1921686e9e4bdd1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_67c4206663084c758c3302f03f24cf87 = $(`<div id="html_67c4206663084c758c3302f03f24cf87" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Kozushima_g.html>Daily graph</h></div>`)[0];
+            popup_640979d4c3864686b1921686e9e4bdd1.setContent(html_67c4206663084c758c3302f03f24cf87);
+        
+
+        circle_9e33873c4be6406b99c556db7fa9754e.bindPopup(popup_640979d4c3864686b1921686e9e4bdd1)
+        ;
+
+        
+    
+    
+            var circle_85b13c8674c1499c8bb4a5529d20c239 = L.circle(
+                [34.075779, 139.479747],
+                {"bubblingMouseEvents": true, "color": "#559e83", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#559e83", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_367d58ee36a3410983816434c6bf2785 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_89efc38462af41e0a0353214b8e9b0dc = $(`<div id="html_89efc38462af41e0a0353214b8e9b0dc" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Miyake_g.html>Daily graph</h></div>`)[0];
+            popup_367d58ee36a3410983816434c6bf2785.setContent(html_89efc38462af41e0a0353214b8e9b0dc);
+        
+
+        circle_85b13c8674c1499c8bb4a5529d20c239.bindPopup(popup_367d58ee36a3410983816434c6bf2785)
+        ;
+
+        
+    
+    
+            var circle_3eeccd4056104c439dac1703cae3b554 = L.circle(
+                [33.897156, 139.596009],
+                {"bubblingMouseEvents": true, "color": "#559e83", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#559e83", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_5c4b6165d3c44b33a86d0600b7b6b1f0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d718a6fc6b8c4e488a82202b64e32a8c = $(`<div id="html_d718a6fc6b8c4e488a82202b64e32a8c" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Mikurajima_g.html>Daily graph</h></div>`)[0];
+            popup_5c4b6165d3c44b33a86d0600b7b6b1f0.setContent(html_d718a6fc6b8c4e488a82202b64e32a8c);
+        
+
+        circle_3eeccd4056104c439dac1703cae3b554.bindPopup(popup_5c4b6165d3c44b33a86d0600b7b6b1f0)
+        ;
+
+        
+    
+    
+            var circle_85a77f72e176451a923cd630fe80b007 = L.circle(
+                [33.109413, 139.790927],
+                {"bubblingMouseEvents": true, "color": "#559e83", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#559e83", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_464ede79f29b4ddda5c79689de217712 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_78041c1ceada4dd3be84b640249686c1 = $(`<div id="html_78041c1ceada4dd3be84b640249686c1" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Hachijo_g.html>Daily graph</h></div>`)[0];
+            popup_464ede79f29b4ddda5c79689de217712.setContent(html_78041c1ceada4dd3be84b640249686c1);
+        
+
+        circle_85a77f72e176451a923cd630fe80b007.bindPopup(popup_464ede79f29b4ddda5c79689de217712)
+        ;
+
+        
+    
+    
+            var circle_31ffccefdbb947d8a18a3a9116d11c8b = L.circle(
+                [32.466537, 139.763337],
+                {"bubblingMouseEvents": true, "color": "#559e83", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#559e83", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_31d043c3d9c0449ebb68f77227fb3980 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_bb0708da1b834962b43e5ebbd857f61f = $(`<div id="html_bb0708da1b834962b43e5ebbd857f61f" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Aogashima_g.html>Daily graph</h></div>`)[0];
+            popup_31d043c3d9c0449ebb68f77227fb3980.setContent(html_bb0708da1b834962b43e5ebbd857f61f);
+        
+
+        circle_31ffccefdbb947d8a18a3a9116d11c8b.bindPopup(popup_31d043c3d9c0449ebb68f77227fb3980)
+        ;
+
+        
+    
+    
+            var circle_6850541135334523a1b4577921b3de73 = L.circle(
+                [27.09438, 142.191904],
+                {"bubblingMouseEvents": true, "color": "#559e83", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#559e83", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+        var popup_df2a3e5af8ca430181847a002aa1161d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8ce3c331daa8444d9d5b0b0c7989c7db = $(`<div id="html_8ce3c331daa8444d9d5b0b0c7989c7db" style="width: 100.0%; height: 100.0%;"><h href=https://nobukuni-hyakutake.github.io/covid19tokyo/Ogasawara_g.html>Daily graph</h></div>`)[0];
+            popup_df2a3e5af8ca430181847a002aa1161d.setContent(html_8ce3c331daa8444d9d5b0b0c7989c7db);
+        
+
+        circle_6850541135334523a1b4577921b3de73.bindPopup(popup_df2a3e5af8ca430181847a002aa1161d)
+        ;
+
+        
+    
+    
+            var marker_84274252f3d04b40a111161913501c3d = L.marker(
+                [35.694003, 139.753634],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_68899c939d524511b9b383c732c56f92 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eChiyoda\u003cbr\u003e4.8\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_84274252f3d04b40a111161913501c3d.setIcon(div_icon_68899c939d524511b9b383c732c56f92);
+        
+    
+            var marker_956daa8c736b4919bc792e41640cf354 = L.marker(
+                [35.670587, 139.772003],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_f84444595c724f4a8afae11c7f1c763f = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eChuo\u003cbr\u003e7.3\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_956daa8c736b4919bc792e41640cf354.setIcon(div_icon_f84444595c724f4a8afae11c7f1c763f);
+        
+    
+            var marker_73f79452859c458b80aa16254b008827 = L.marker(
+                [35.658071, 139.751599],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_c13678bc0aba4cc3af0940734e70e385 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eMinato\u003cbr\u003e7.1\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_73f79452859c458b80aa16254b008827.setIcon(div_icon_c13678bc0aba4cc3af0940734e70e385);
+        
+    
+            var marker_155edfab0c764c07926f48091a80cef2 = L.marker(
+                [35.69389, 139.703463],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_62c39f368c694363b9c8d54d59197a5d = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eShinjuku\u003cbr\u003e9.7\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_155edfab0c764c07926f48091a80cef2.setIcon(div_icon_62c39f368c694363b9c8d54d59197a5d);
+        
+    
+            var marker_f7689ff7541d474e84e8713d1feb6a07 = L.marker(
+                [35.707976, 139.752473],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_05d6724c55cf4641bca33b4f3d90bd83 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eBunkyo\u003cbr\u003e5.7\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_f7689ff7541d474e84e8713d1feb6a07.setIcon(div_icon_05d6724c55cf4641bca33b4f3d90bd83);
+        
+    
+            var marker_35dd643c208d45aca1d7207642eaa15a = L.marker(
+                [35.712607, 139.779984],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_ed4d6dacc08e464a874b8081e05593f0 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eTaito\u003cbr\u003e7.7\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_35dd643c208d45aca1d7207642eaa15a.setIcon(div_icon_ed4d6dacc08e464a874b8081e05593f0);
+        
+    
+            var marker_d6b4fea9cf184de28719e3a9970b6659 = L.marker(
+                [35.710724, 139.801497],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_4700ce03c3924171976ac038cadb376d = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eSumida\u003cbr\u003e6.0\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_d6b4fea9cf184de28719e3a9970b6659.setIcon(div_icon_4700ce03c3924171976ac038cadb376d);
+        
+    
+            var marker_2e62bddf0b7d4bbda8a5ab2a5c78af34 = L.marker(
+                [35.672859, 139.817365],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_eb10c55afa0d4141a8604dc8aa5ff255 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eKoto\u003cbr\u003e7.4\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_2e62bddf0b7d4bbda8a5ab2a5c78af34.setIcon(div_icon_eb10c55afa0d4141a8604dc8aa5ff255);
+        
+    
+            var marker_f0c14fd0fb07403e9364ac1181bbf8fb = L.marker(
+                [35.609066, 139.73025],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_c653e02ad5e945a2bcbd7752d74e1d36 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eShinagawa\u003cbr\u003e5.6\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_f0c14fd0fb07403e9364ac1181bbf8fb.setIcon(div_icon_c653e02ad5e945a2bcbd7752d74e1d36);
+        
+    
+            var marker_d9cc0bb6e40e4c9fa86723f5eb299d59 = L.marker(
+                [35.64141, 139.698118],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_4ae8a99c58f24b9680dd2d75d3c10f21 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eMeguro\u003cbr\u003e6.0\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_d9cc0bb6e40e4c9fa86723f5eb299d59.setIcon(div_icon_4ae8a99c58f24b9680dd2d75d3c10f21);
+        
+    
+            var marker_a07c106e07344c0e8c352bc5250f7638 = L.marker(
+                [35.56126, 139.715987],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_4444ec6208794bc8a4a7494fc2d7d870 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eOta\u003cbr\u003e5.3\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_a07c106e07344c0e8c352bc5250f7638.setIcon(div_icon_4444ec6208794bc8a4a7494fc2d7d870);
+        
+    
+            var marker_e6dad31c2eae4776898dfb90c229be9d = L.marker(
+                [35.646481, 139.653208],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_c869cb44961a4e0aa802357441382902 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eSetagaya\u003cbr\u003e5.3\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_e6dad31c2eae4776898dfb90c229be9d.setIcon(div_icon_c869cb44961a4e0aa802357441382902);
+        
+    
+            var marker_83b4ab2eea374155a1036543187aba54 = L.marker(
+                [35.663982, 139.697948],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_f4fc3578a76640dd8a8f615e540fefa5 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eShibuya\u003cbr\u003e7.5\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_83b4ab2eea374155a1036543187aba54.setIcon(div_icon_f4fc3578a76640dd8a8f615e540fefa5);
+        
+    
+            var marker_1593724f146c472eb507e31c9b9e0620 = L.marker(
+                [35.707268, 139.663738],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_4b397ce43eb2489b9424a15e67431039 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eNakano\u003cbr\u003e9.8\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_1593724f146c472eb507e31c9b9e0620.setIcon(div_icon_4b397ce43eb2489b9424a15e67431039);
+        
+    
+            var marker_116cd61f889740db94886ef906fa7d17 = L.marker(
+                [35.699546, 139.636414],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_74e7752fe9db4d6a939d4082412c918f = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eSuginami\u003cbr\u003e5.8\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_116cd61f889740db94886ef906fa7d17.setIcon(div_icon_74e7752fe9db4d6a939d4082412c918f);
+        
+    
+            var marker_29d02e054a144beeb30e295e8bb2a058 = L.marker(
+                [35.732437, 139.715469],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_2bd26872f30c49f695b3ac0fd42d86e5 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eToshima\u003cbr\u003e6.0\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_29d02e054a144beeb30e295e8bb2a058.setIcon(div_icon_2bd26872f30c49f695b3ac0fd42d86e5);
+        
+    
+            var marker_1ba2d0ce43f74014be9bc96f5ab94d77 = L.marker(
+                [35.752805, 139.733657],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_44b543260d5d40e4b8d44d8e307c3a78 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eKita\u003cbr\u003e5.1\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_1ba2d0ce43f74014be9bc96f5ab94d77.setIcon(div_icon_44b543260d5d40e4b8d44d8e307c3a78);
+        
+    
+            var marker_c469f2a736fe47e78d7c9602d982cbc1 = L.marker(
+                [35.736083, 139.783372],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_57c5dc3f44d34ac39b76accd88052ba3 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eArakawa\u003cbr\u003e4.5\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_c469f2a736fe47e78d7c9602d982cbc1.setIcon(div_icon_57c5dc3f44d34ac39b76accd88052ba3);
+        
+    
+            var marker_b7abc4bd439b472ab6c34ff8ad9dc5f8 = L.marker(
+                [35.751245, 139.709246],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_c2ce96dcc3a94627a2c1cad24e4c367d = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eItabashi\u003cbr\u003e5.2\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_b7abc4bd439b472ab6c34ff8ad9dc5f8.setIcon(div_icon_c2ce96dcc3a94627a2c1cad24e4c367d);
+        
+    
+            var marker_556a883d122c484f8f4830d7a5cef82e = L.marker(
+                [35.7356, 139.651725],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_0ca9dc78577143b6ad81c7260dd8a8fa = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eNerima\u003cbr\u003e3.7\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_556a883d122c484f8f4830d7a5cef82e.setIcon(div_icon_0ca9dc78577143b6ad81c7260dd8a8fa);
+        
+    
+            var marker_7a51c639d08e426eb48d5c82c0c35faa = L.marker(
+                [35.774945, 139.804584],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_3da2467acd3249979c800e371cf824b4 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eAdachi\u003cbr\u003e5.2\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_7a51c639d08e426eb48d5c82c0c35faa.setIcon(div_icon_3da2467acd3249979c800e371cf824b4);
+        
+    
+            var marker_fde09a12443641fdb516649cfc6016fc = L.marker(
+                [35.74343, 139.847213],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_fa94bd2d077c4aed9a24c0c7da5496a2 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eKatsushika\u003cbr\u003e3.2\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_fde09a12443641fdb516649cfc6016fc.setIcon(div_icon_fa94bd2d077c4aed9a24c0c7da5496a2);
+        
+    
+            var marker_e971ad22aa5648439ffb1a201d592011 = L.marker(
+                [35.706648, 139.868312],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_8a182ea2db9344bb999ae8be5fbbf0f3 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eEdogawa\u003cbr\u003e4.8\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_e971ad22aa5648439ffb1a201d592011.setIcon(div_icon_8a182ea2db9344bb999ae8be5fbbf0f3);
+        
+    
+            var marker_f12f6c06e2bc4530af817c596ec0ec1d = L.marker(
+                [35.66657, 139.316075],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_3770e3e2d4c349af891826204587038b = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eHachioji\u003cbr\u003e1.7\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_f12f6c06e2bc4530af817c596ec0ec1d.setIcon(div_icon_3770e3e2d4c349af891826204587038b);
+        
+    
+            var marker_c9db9f4294744b3a854b502aa8e6ccef = L.marker(
+                [35.713981, 139.407846],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_76b30958289c4390b57c398097e2e923 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eTachikawa\u003cbr\u003e2.3\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_c9db9f4294744b3a854b502aa8e6ccef.setIcon(div_icon_76b30958289c4390b57c398097e2e923);
+        
+    
+            var marker_b59dfbf557cc47cdaaa6b1d4681c7c6e = L.marker(
+                [35.717837, 139.565938],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_8402b0728c4c4cae84ce853b1ae7dd87 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eMusashino\u003cbr\u003e3.9\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_b59dfbf557cc47cdaaa6b1d4681c7c6e.setIcon(div_icon_8402b0728c4c4cae84ce853b1ae7dd87);
+        
+    
+            var marker_5d616f7ce91043b58189fac5d9fe802f = L.marker(
+                [35.683308, 139.559883],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_0b9a9a5417f943d9821b58df0a13fdcf = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eMitaka\u003cbr\u003e3.7\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_5d616f7ce91043b58189fac5d9fe802f.setIcon(div_icon_0b9a9a5417f943d9821b58df0a13fdcf);
+        
+    
+            var marker_03b1ab0d61b143b281f95e9ff422dd6f = L.marker(
+                [35.788171, 139.274994],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_bc2cb219a4fa441c80cbcf4d55c17c2d = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eOme\u003cbr\u003e2.3\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_03b1ab0d61b143b281f95e9ff422dd6f.setIcon(div_icon_bc2cb219a4fa441c80cbcf4d55c17c2d);
+        
+    
+            var marker_52052f3495854619b737011e86e261da = L.marker(
+                [35.668921, 139.477663],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_f1b2a3f316e848b497c4c18123c93c43 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eFuchu\u003cbr\u003e2.9\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_52052f3495854619b737011e86e261da.setIcon(div_icon_f1b2a3f316e848b497c4c18123c93c43);
+        
+    
+            var marker_23839b03198244e2ad8e91291775412e = L.marker(
+                [35.705705, 139.353773],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_8d7ed2e4178f41d883e86f54b201100f = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eAkishima\u003cbr\u003e1.5\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_23839b03198244e2ad8e91291775412e.setIcon(div_icon_8d7ed2e4178f41d883e86f54b201100f);
+        
+    
+            var marker_669916c35add4e9e84886d73841a95fa = L.marker(
+                [35.650628, 139.540683],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_7c4d75ab53e1426097178e6580dc8524 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eChofu\u003cbr\u003e3.4\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_669916c35add4e9e84886d73841a95fa.setIcon(div_icon_7c4d75ab53e1426097178e6580dc8524);
+        
+    
+            var marker_43b25db798df4f07b22136287234014f = L.marker(
+                [35.546559, 139.438527],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_f663041d87a94b778a3e6dc4d7803e22 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eMachida\u003cbr\u003e2.6\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_43b25db798df4f07b22136287234014f.setIcon(div_icon_f663041d87a94b778a3e6dc4d7803e22);
+        
+    
+            var marker_267a4e2f95c548859899828cfeabb4b4 = L.marker(
+                [35.699479, 139.502989],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_8fca2f8b8bb34b33b7d1bd29fce143d5 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eKoganei\u003cbr\u003e2.7\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_267a4e2f95c548859899828cfeabb4b4.setIcon(div_icon_8fca2f8b8bb34b33b7d1bd29fce143d5);
+        
+    
+            var marker_389620f7086c4c2fbb68e794a0677c9c = L.marker(
+                [35.728496, 139.477474],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_6300a03cbef54d668de24ab20589b983 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eKodaira\u003cbr\u003e1.8\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_389620f7086c4c2fbb68e794a0677c9c.setIcon(div_icon_6300a03cbef54d668de24ab20589b983);
+        
+    
+            var marker_a03d2b9162c84354b6e70daa96c8245d = L.marker(
+                [35.671347, 139.394981],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_830d0029106847b09a7aef62211faf69 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eHino\u003cbr\u003e1.1\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_a03d2b9162c84354b6e70daa96c8245d.setIcon(div_icon_830d0029106847b09a7aef62211faf69);
+        
+    
+            var marker_a885ad75296a4d1a9162d07f09d736fa = L.marker(
+                [35.754624, 139.468484],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_686482e802334b12bc18f78f30cd5022 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eHigashimurayama\u003cbr\u003e2.2\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_a885ad75296a4d1a9162d07f09d736fa.setIcon(div_icon_686482e802334b12bc18f78f30cd5022);
+        
+    
+            var marker_b2ce0a1d9eb54d23a4a5793bea53b001 = L.marker(
+                [35.710943, 139.462252],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_635587d58dd9483aa5c706fe4d351bb8 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eKokubunji\u003cbr\u003e2.4\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_b2ce0a1d9eb54d23a4a5793bea53b001.setIcon(div_icon_635587d58dd9483aa5c706fe4d351bb8);
+        
+    
+            var marker_29460f6ed2aa491bbd226590f471873e = L.marker(
+                [35.683912, 139.441366],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_f8bf363da6794b399d741147985e7923 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eKunitachi\u003cbr\u003e3.9\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_29460f6ed2aa491bbd226590f471873e.setIcon(div_icon_f8bf363da6794b399d741147985e7923);
+        
+    
+            var marker_fbd1f0ea26344dc888d1fc056adf9c52 = L.marker(
+                [35.738601, 139.326744],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_8f8eebef52a8425caf364dd4897ec1a6 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eFussa\u003cbr\u003e2.7\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_fbd1f0ea26344dc888d1fc056adf9c52.setIcon(div_icon_8f8eebef52a8425caf364dd4897ec1a6);
+        
+    
+            var marker_ef251a5e5e544f02b49c81e2b4502b1b = L.marker(
+                [35.634814, 139.578696],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_6300610f0b1d43f5adf4e84091b8d956 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eKomae\u003cbr\u003e3.4\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_ef251a5e5e544f02b49c81e2b4502b1b.setIcon(div_icon_6300610f0b1d43f5adf4e84091b8d956);
+        
+    
+            var marker_fe9a77158bca46b5a6ea432310693900 = L.marker(
+                [35.745328, 139.426591],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_33d891040c7f4f95b7c64b35d7e63367 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eHigashiyamato\u003cbr\u003e1.5\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_fe9a77158bca46b5a6ea432310693900.setIcon(div_icon_33d891040c7f4f95b7c64b35d7e63367);
+        
+    
+            var marker_a2cf6dbc5f144d14a7f1baa22b735db7 = L.marker(
+                [35.785761, 139.526422],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_64fb0bf412b44f6ea7827fd2b59e782c = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eKiyose\u003cbr\u003e1.9\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_a2cf6dbc5f144d14a7f1baa22b735db7.setIcon(div_icon_64fb0bf412b44f6ea7827fd2b59e782c);
+        
+    
+            var marker_0aa7fc8bc0724f938d9b28fa5f0e764a = L.marker(
+                [35.757992, 139.529673],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_f3d8a13a6ce6451dbd5811bed646ef7b = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eHigashikurume\u003cbr\u003e3.4\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_0aa7fc8bc0724f938d9b28fa5f0e764a.setIcon(div_icon_f3d8a13a6ce6451dbd5811bed646ef7b);
+        
+    
+            var marker_6a58146c9cb7462e9971aa39eeb7b798 = L.marker(
+                [35.754906, 139.387421],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_ec65c3046f46438a824528aeae9bd0b2 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eMusashimurayama\u003cbr\u003e2.0\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_6a58146c9cb7462e9971aa39eeb7b798.setIcon(div_icon_ec65c3046f46438a824528aeae9bd0b2);
+        
+    
+            var marker_16bf3e4a6df84405a4a324a4348a7d32 = L.marker(
+                [35.636959, 139.446366],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_b462fbd25caa4eb6bc4afbe1cbe40a37 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eTama\u003cbr\u003e2.3\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_16bf3e4a6df84405a4a324a4348a7d32.setIcon(div_icon_b462fbd25caa4eb6bc4afbe1cbe40a37);
+        
+    
+            var marker_a0199e524a4640bf903a3f99dcd1a733 = L.marker(
+                [35.637938, 139.504603],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_e7e6699c922e4bed95a39d27b72d7f84 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eInagi\u003cbr\u003e0.9\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_a0199e524a4640bf903a3f99dcd1a733.setIcon(div_icon_e7e6699c922e4bed95a39d27b72d7f84);
+        
+    
+            var marker_b7ad93532c37474fb4a4d39ed21fcd48 = L.marker(
+                [35.767168, 139.311042],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_17e09a151b8a4296b3caf62a80d9392d = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eHamura\u003cbr\u003e1.8\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_b7ad93532c37474fb4a4d39ed21fcd48.setIcon(div_icon_17e09a151b8a4296b3caf62a80d9392d);
+        
+    
+            var marker_0b0224c450314ccf8cda3c7b6bfbf4b4 = L.marker(
+                [35.728959, 139.294046],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_45ca49022e00443e99303f8c6a8d0a3c = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eAkiruno\u003cbr\u003e2.1\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_0b0224c450314ccf8cda3c7b6bfbf4b4.setIcon(div_icon_45ca49022e00443e99303f8c6a8d0a3c);
+        
+    
+            var marker_d964a9f75fc44d358a15012c17aec32c = L.marker(
+                [35.725499, 139.538159],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_688fe1cf856e45fca188be1b2d917c72 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eNishitokyo\u003cbr\u003e2.9\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_d964a9f75fc44d358a15012c17aec32c.setIcon(div_icon_688fe1cf856e45fca188be1b2d917c72);
+        
+    
+            var marker_1f5ff1203ffa4a6cb45343bcbb7c9395 = L.marker(
+                [35.771989, 139.354054],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_0c8030c0341b499b824c679d8717ad95 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eMizuho\u003cbr\u003e0.0\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_1f5ff1203ffa4a6cb45343bcbb7c9395.setIcon(div_icon_0c8030c0341b499b824c679d8717ad95);
+        
+    
+            var marker_deb0a315262f4b40b4b078f34b5b303d = L.marker(
+                [35.742115, 139.257405],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_862ac44c76ff4cc3aaa34efe2579b2ae = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eHinode\u003cbr\u003e1.7\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_deb0a315262f4b40b4b078f34b5b303d.setIcon(div_icon_862ac44c76ff4cc3aaa34efe2579b2ae);
+        
+    
+            var marker_cf1545c93b384c3a9ffd0074497b0d7d = L.marker(
+                [35.72684, 139.148852],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_c5d32b78ac544f458006565ac140af08 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eHinohara\u003cbr\u003e0.0\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_cf1545c93b384c3a9ffd0074497b0d7d.setIcon(div_icon_c5d32b78ac544f458006565ac140af08);
+        
+    
+            var marker_9ee44b78794644c3a8faf8a3ffb39293 = L.marker(
+                [35.80952, 139.096214],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_fa6b15b62f2a4419938b250335c943e8 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eOkutama\u003cbr\u003e0.0\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_9ee44b78794644c3a8faf8a3ffb39293.setIcon(div_icon_fa6b15b62f2a4419938b250335c943e8);
+        
+    
+            var marker_f12eccb4391a4e6980b74a7bc63c20e3 = L.marker(
+                [34.750058, 139.355619],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_f240be697e2a45d6a473f03cbb331e21 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eOshima\u003cbr\u003e45.4\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_f12eccb4391a4e6980b74a7bc63c20e3.setIcon(div_icon_f240be697e2a45d6a473f03cbb331e21);
+        
+    
+            var marker_dcf72fdddd4f482083405c764d93a8a5 = L.marker(
+                [34.529354, 139.282584],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_91f7feed66e744a4ad3a6bb506443251 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eToshima\u003cbr\u003e0.0\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_dcf72fdddd4f482083405c764d93a8a5.setIcon(div_icon_91f7feed66e744a4ad3a6bb506443251);
+        
+    
+            var marker_baf0865f3d264d9390e7608d27daf7e7 = L.marker(
+                [34.377138, 139.256556],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_fe58b25027564a56837ba43e74dcbc85 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eNiijima\u003cbr\u003e0.0\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_baf0865f3d264d9390e7608d27daf7e7.setIcon(div_icon_fe58b25027564a56837ba43e74dcbc85);
+        
+    
+            var marker_194f827d9c434e6cbee94cf1c104f9bf = L.marker(
+                [34.205371, 139.134426],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_89613ed500644b73bd200c78e3e51049 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eKozushima\u003cbr\u003e0.0\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_194f827d9c434e6cbee94cf1c104f9bf.setIcon(div_icon_89613ed500644b73bd200c78e3e51049);
+        
+    
+            var marker_158d01189fb146b6b72f936a2b63056f = L.marker(
+                [34.075779, 139.479747],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_a7f8385bbffb49c199f2f346cc6e1320 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eMiyake\u003cbr\u003e0.0\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_158d01189fb146b6b72f936a2b63056f.setIcon(div_icon_a7f8385bbffb49c199f2f346cc6e1320);
+        
+    
+            var marker_c0231ed24d6b4425bc6881d14f3d01eb = L.marker(
+                [33.897156, 139.596009],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_61d745388f0b46fa970b4ad8d3b6b79e = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eMikurajima\u003cbr\u003e0.0\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_c0231ed24d6b4425bc6881d14f3d01eb.setIcon(div_icon_61d745388f0b46fa970b4ad8d3b6b79e);
+        
+    
+            var marker_7edac301784141758ec729bbcc270c57 = L.marker(
+                [33.109413, 139.790927],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_35b08421268a477e94a0d675f7889ae9 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eHachijo\u003cbr\u003e0.0\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_7edac301784141758ec729bbcc270c57.setIcon(div_icon_35b08421268a477e94a0d675f7889ae9);
+        
+    
+            var marker_42b081cb193b4fdfba6d2348636b8280 = L.marker(
+                [32.466537, 139.763337],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_49d5a98b54ca4ef1be4ddb8bb5be6299 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eAogashima\u003cbr\u003e0.0\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_42b081cb193b4fdfba6d2348636b8280.setIcon(div_icon_49d5a98b54ca4ef1be4ddb8bb5be6299);
+        
+    
+            var marker_28cfb64405344cf587ca411669303167 = L.marker(
+                [27.09438, 142.191904],
+                {}
+            ).addTo(map_48725d29dca149d0bad9161853b578b7);
+        
+    
+            var div_icon_d6358447f66e45d793bcd7044cd7449e = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt\" style=\"text-align:center;\"\u003eOgasawara\u003cbr\u003e0.0\u003c/div\u003e", "iconAnchor": [20, 20], "iconSize": [0, 0]});
+            marker_28cfb64405344cf587ca411669303167.setIcon(div_icon_d6358447f66e45d793bcd7044cd7449e);
+        
+</script>
