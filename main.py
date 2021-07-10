@@ -82,107 +82,63 @@ f2.close
 import plotly.express as px
 import plotly.graph_objects as go
 
-dfmusashino=out.loc[(out['group_code']==132039),['group_code','label','date','count_1day','count_7days','population']].copy()
-dfmusashino['sevendays_ave']=round((dfmusashino['count_7days']/7)/dfmusashino['population']*100000,1)
-dfmusashino['count_1day_p']=round(dfmusashino['count_1day']/dfmusashino['population']*100000,1)
-dfmusashino['stage4']=3.6
-dfmusashino['stage3']=2.1
+for i in range (62):
+    dfgraph00201=out.loc[(out['number']==i),['group_code','label','ruby','date','count_1day','count_7days','population','en','number']].copy().reset_index()
+    label00201=dfgraph00201['label'][0]
+    en00201=dfgraph00201['en'][0]
+    title00201=dfgraph00201['label'][0]+' 新型コロナウイルス陽性者数'
+    dfgraph00201['sevendays_ave']=round((dfgraph00201['count_7days']/7)/dfgraph00201['population']*100000,1)
+    dfgraph00201['count_1day_p']=round(dfgraph00201['count_1day']/dfgraph00201['population']*100000,1)
+    dfgraph00201['stage4']=3.6
+    dfgraph00201['stage3']=2.1
 
-fig02=go.Bar(
-    x=dfmusashino["date"], y=dfmusashino["count_1day_p"], name='10万人あたり',
-    marker={"color": "#99cc66"},
-    hoverinfo = "none",
+    fig00202=go.Bar(
+        x=dfgraph00201["date"], y=dfgraph00201["count_1day_p"], name='10万人あたり',
+        marker={"color": "#99cc66"},
+        hoverinfo = "none",
+        )
+    fig00203=go.Scatter(
+        x=dfgraph00201["date"], y=dfgraph00201["sevendays_ave"], name='10万人あたり7日間平均',
+        line={"color": "#cc6600"},
     )
-fig03=go.Scatter(
-    x=dfmusashino["date"], y=dfmusashino["sevendays_ave"], name='10万人あたり7日間平均',
-    line={"color": "#cc6600"},
-)
-figstage4=go.Scatter(
-    x=dfmusashino["date"], y=dfmusashino["stage4"], name='ステージ4基準', 
-    line={"width":1, "color": "red", "dash":"dash"},
-    hoverinfo = "none"
+    figstage4=go.Scatter(
+        x=dfgraph00201["date"], y=dfgraph00201["stage4"], name='ステージ4基準', 
+        line={"width":1, "color": "red", "dash":"dash"},
+        hoverinfo = "none"
 )
 
-figstage3=go.Scatter(
-    x=dfmusashino["date"], y=dfmusashino["stage3"], name='ステージ3基準',
-    line={"width":1, "color": "#ffcc00", "dash":"dash"},
-    hoverinfo = "none"
-)
-layout=go.Layout(
+    figstage3=go.Scatter(
+        x=dfgraph00201["date"], y=dfgraph00201["stage3"], name='ステージ3基準',
+        line={"width":1, "color": "#ffcc00", "dash":"dash"},
+        hoverinfo = "none"
+    )
+    layout=go.Layout(
 #    font=dict(size=20),
-    title={"text":'武蔵野市 新型コロナウイルス陽性者数',
-    },
-    xaxis={
-        "linecolor": "black"   
+        title={"text":title00201,
+        },
+        xaxis={
+            "linecolor": "black"   
         },    
-yaxis={
-        "title":{
-        "text": '10万人あたり',
-        },
+        yaxis={
+            "title":{
+            "text": '10万人あたり',
+            },
         "linecolor": "black",   
-        },
-    hovermode='x',
-    plot_bgcolor="#ffffff"
-    )
+            },
+        hovermode='x',
+        plot_bgcolor="#ffffff"
+        )
 
-fig04=go.Figure(data=[fig02, fig03, figstage4, figstage3], layout=layout)
-fig04.update_yaxes(
-    rangemode="nonnegative"
-)
-fig04.update_layout(legend_orientation="h")
-fig04.update_layout(legend={"x":0,"y":-0.2})
+    fig04=go.Figure(data=[fig00202, fig00203, figstage4, figstage3], layout=layout)
+    fig04.update_yaxes(
+        rangemode="nonnegative"
+        )
+    fig04.update_layout(legend_orientation="h")
+    fig04.update_layout(legend={"x":0,"y":-0.2})
 
-fig04.update_xaxes(type='date', tickformat="%y/%-m/%-d", tick0='2020-05-01', dtick="M2") 
-#fig04.show()
-fig04.write_html("docs/musashino_graph.html")
+    fig04.update_xaxes(type='date', tickformat="%y/%-m/%-d", tick0='2020-05-01', dtick="M2") 
 
-dfmitaka=out.loc[(out['group_code']==132047),['group_code','label','date','count_1day','count_7days','population']].copy()
-dfmitaka['sevendays_ave']=round((dfmitaka['count_7days']/7)/dfmitaka['population']*100000,1)
-dfmitaka['count_1day_p']=round(dfmitaka['count_1day']/dfmitaka['population']*100000,1)
-dfmitaka['stage4']=3.6
-dfmitaka['stage3']=2.1
-
-fig12=go.Bar(
-    x=dfmitaka["date"], y=dfmitaka["count_1day_p"], name='10万人あたり',
-    marker={"color": "#99cc66"},
-    hoverinfo = "none",
-    )
-fig13=go.Scatter(
-    x=dfmitaka["date"], y=dfmitaka["sevendays_ave"], name='10万人あたり7日間平均',
-    line={"color": "#cc6600"},
-)
-
-layout=go.Layout(
-#    font=dict(size=20),
-    title={"text":'三鷹市 新型コロナウイルス陽性者数',
-    },
-    xaxis={
-        "linecolor": "black"   
-        },    
-yaxis={
-        "title":{
-        "text": '10万人あたり',
-        },
-        "linecolor": "black",   
-        },
-    hovermode='x',
-    plot_bgcolor="#ffffff"
-    )
-
-fig14=go.Figure(data=[fig12, fig13, figstage4, figstage3], layout=layout)
-fig14.update_yaxes(
-    rangemode="nonnegative"
-)
-fig14.update_layout(legend_orientation="h")
-fig14.update_layout(legend={"x":0,"y":-0.2})
-
-fig14.update_xaxes(type='date', tickformat="%y/%-m/%-d", tick0='2020-05-01', dtick="M2") 
-#fig04.show()
-fig14.write_html("docs/mitaka_graph.html")
-
-print('last day is:')
-print(last_day1)
-print('Done')
+    fig04.write_html("docs/"+en00201+"_g.html")
 
 #map表示(工事中)
 pd.set_option('display.max_rows', 100)
@@ -210,6 +166,8 @@ dfmap30.loc[(dfmap30['last7days_ratio']<0.9),['color']]="#c3cb71"
 dfmap30.loc[(dfmap30['last7days_ratio']>1.1),['color']]="#1b85b8"
 
 dfmap30.to_csv('step00200.csv')
+
+
 test='Kokubunji'
 test2='国分寺市'
 base_amount=1.0
@@ -237,3 +195,7 @@ folium.map.Marker(
     ).add_to(tokyomap)
 tokyomap.save(outfile="docs/tokyomap.html")
 #/map表示
+
+print('last day is:')
+print(last_day1)
+print('Done')
