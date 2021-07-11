@@ -14,7 +14,21 @@ df01['date']=pd.to_datetime(df01['公表_年月日'],
                format='%Y-%m-%d').dt.date
 last_day1=df01['date'].max()
 
-##SettingWithCopyWarningを回避のため、copyとする。解説はここ。https://linus-mk.hatenablog.com/entry/2019/02/02/200000
+#東京都全体の1日ごとの集計
+dfw01=df01 \
+    .groupby(['date']) \
+        .agg({'陽性者数':['sum']}).reset_index()
+dfw01.columns=['date','count_w_sum']
+dfw02=dfw01
+dfw01['yesterday']=dfw01['date']-timedelta(1)
+dfw02=dfw02.rename(columns={'count_w_sum':'count_w_sum_yesterday'})
+dfw03=pd.merge(dfw01,dfw02,left_on='yesterday',right_on='date',how='inner')
+dfw03['count_w_1day']=dfw03['count_w_sum']-dfw03['count_w_sum_yesterday']
+dfw=dfw03.loc[:,['date_x','count_w_1day']]
+dfw=dfw.rename(columns={'date_x':'date'})
+dfw.to_csv('docs/dfw.csv')
+#/東京都全体の1日ごとの集計
+
 df02=df01.loc[(df01['集計区分']=='市区町村'),:].copy()
 df03=df02.rename(columns={'全国地方公共団体コード':'group_code','陽性者数':'count_sum'})
 df04=df03.loc[:,['group_code','count_sum','date']]
