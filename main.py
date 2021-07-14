@@ -127,7 +127,7 @@ for i in range (63):
         hoverinfo = "none"
     )
     layout=go.Layout(
-        font=dict(size=15),
+        font=dict(size=25),
         title={"text":title00201,
         },
         xaxis={
