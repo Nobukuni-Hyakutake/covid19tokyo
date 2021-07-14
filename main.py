@@ -135,7 +135,7 @@ for i in range (63):
             "rangeselector":{
                 "buttons":[
                     {"label":"全期間","step":"all"},
-                    {"label":"直近2ヵ月","step":"month","count":2,"stepmode":"backward"}
+                    {"label":"直近3ヵ月","step":"month","count":3,"stepmode":"backward"}
                 ],
             },
             "type":"date",
@@ -176,7 +176,7 @@ for i in range (63):
         ]
     )
     fig04.update_layout(
-        margin={"t":80}
+        margin={"t":120}
         )
     fig04.update_yaxes(automargin=False)
     fig04.update_xaxes(type='date', tickformat="%y/%-m/%-d", tick0='2020-05-01', dtick="M2") 
