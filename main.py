@@ -113,31 +113,32 @@ for i in range (63):
         )
     fig00203=go.Scatter(
         x=dfgraph00201["date"], y=dfgraph00201["sevendays_ave"], name='10万人あたり7日間平均',
-        line={"color": "#cc6600"},
+        line={"color": "#cc6600","width":2},
     )
     figstage4=go.Scatter(
         x=dfgraph00201["date"], y=dfgraph00201["stage4"], name='ステージ4基準', 
-        line={"width":1, "color": "red", "dash":"dash"},
+        line={"width":2, "color": "red", "dash":"dash"},
         hoverinfo = "none"
 )
 
     figstage3=go.Scatter(
         x=dfgraph00201["date"], y=dfgraph00201["stage3"], name='ステージ3基準',
-        line={"width":1, "color": "#ffcc00", "dash":"dash"},
+        line={"width":2, "color": "#ffcc00", "dash":"dash"},
         hoverinfo = "none"
     )
     layout=go.Layout(
-#    font=dict(size=20),
+        font=dict(size=15),
         title={"text":title00201,
         },
         xaxis={
             "linecolor": "black",
             "rangeselector":{
                 "buttons":[
-                    {"label":"1ヶ月","step":"month","count":1},
                     {"label":"全期間","step":"all"},
-                ]
-            }
+                    {"label":"過去1ヵ月","step":"month","count":1,"stepmode":"backward"}
+                ],
+            },
+            "type":"date",
         },    
         yaxis={
             "title":{
@@ -161,11 +162,16 @@ for i in range (63):
             go.layout.Annotation(
                 x=last_day1,
                 y=sevendays_ave_lastday,
+                xref="x",
+                yref="y",
                 text=str(last_day1.year)[2:4]+"/"+str(last_day1.month)+"/"+str(last_day1.day)+": "+str(sevendays_ave_lastday),
                 showarrow=True,
                 arrowhead=1,
                 bgcolor="#cc6600",
-                font={"size":12,"color":"white"},
+                font={"size":15,"color":"black"},
+                ax=-80,
+                ay=-80,
+                opacity=0.7,
             )
         ]
     )
