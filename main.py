@@ -137,7 +137,7 @@ for i in range (63):
             "rangeselector":{
                 "buttons":[
                     {"label":"全期間","step":"all"},
-                    {"label":"直近3ヵ月","step":"month","count":3,"stepmode":"backward"}
+                    {"label":"直近3ヵ月間","step":"month","count":3,"stepmode":"backward"}
                 ],
             },
             "type":"date",
