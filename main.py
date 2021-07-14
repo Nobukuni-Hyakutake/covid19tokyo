@@ -7,9 +7,9 @@ import json
 import plotly.graph_objects as go
 from folium.features import DivIcon
 import folium
-#url ="https://stopcovid19.metro.tokyo.lg.jp/data/130001_tokyo_covid19_positive_cases_by_municipality.csv"
-#df01 = pd.read_csv(url, encoding="UTF-8")
-df01 = pd.read_csv('130001_tokyo_covid19_positive_cases_by_municipality.csv', encoding="UTF-8")
+url ="https://stopcovid19.metro.tokyo.lg.jp/data/130001_tokyo_covid19_positive_cases_by_municipality.csv"
+df01 = pd.read_csv(url, encoding="UTF-8")
+#df01 = pd.read_csv('130001_tokyo_covid19_positive_cases_by_municipality.csv', encoding="UTF-8")
 df01['date']=df01['公表_年月日'].astype('datetime64')
 last_day1=df01['date'].max()
 
@@ -79,7 +79,7 @@ out=df11
 #print(out.dtypes)
 out.to_csv('docs/covid19tokyo_preprocessed.csv')
 
-out2=df11.loc[:,['group_code','ruby','date','count_1day','count_7days']]
+out2=df11.loc[:,['group_code','ruby','date','count_1day','count_7days','jp_order']]
 out2.to_csv('docs/covid19tokyo_preprocessed_light.csv')
 
 #やさしいにほんごここから
@@ -181,10 +181,23 @@ for i in range (63):
     fig04.write_html("docs/"+en00201+"_g.html")
 
 df00101=out
-df00101['g_url']='https://nobukuni-hyakutake.github.io/covid19tokyo/'+out['en']+'_g.html'
+df00101['URL']='https://nobukuni-hyakutake.github.io/covid19tokyo/'+out['en']+'_g.html'
+df00101.to_csv('docs/df00101.csv')
+df00102=df00101
+df00102['区市町村名']=df00102['ruby']
+df00102=df00102.loc[:,['区市町村名','URL','jp_order']]
+df00102=df00102.drop_duplicates(subset=['区市町村名'],keep='first')
+df00102=df00102.sort_values('jp_order').reset_index()
+df00102=df00102.loc[:,['区市町村名','URL']]
+list0=df00102.to_html(render_links=True,index = False)
+
+f3=open('docs/link_list.html','wt')
+f3.write(list0)
+f3.close
+
+
 #map表示(工事中)
 pd.set_option('display.max_rows', 100)
-
 #区市町村の緯度経度テーブル
 dfmap01=pd.read_csv('office_address.csv')
 dfmap02=dfmap01.loc[(dfmap01['public_office_classification']==1),['group_code','office_no','public_office_name']]
@@ -198,7 +211,7 @@ mapstep00100=dfmap13
 #/区市町村の緯度経度テーブル
 
 dfmap20=df00101.query('date==last_day')
-dfmap21=dfmap20.loc[:,['date','group_code','count_7days','last7days_ratio','pref','label','population','en','g_url','number']]
+dfmap21=dfmap20.loc[:,['date','group_code','count_7days','last7days_ratio','pref','label','population','en','URL','number']]
 dfmap21['group_code']=dfmap21['group_code'].astype('str')
 dfmap21['group_code']=dfmap21['group_code'].str[0:5]
 mapstep00100['group_code']=mapstep00100['group_code'].astype('str')
@@ -211,7 +224,7 @@ dfmap30['color']="#559e83"
 dfmap30.loc[(dfmap30['last7days_ratio']<0.9),['color']]="#c3cb71"
 dfmap30.loc[(dfmap30['last7days_ratio']>1.1),['color']]="#1b85b8"
 dfmap30.to_csv('step00200.csv')
-dfmap30['popup']='<a href="'+dfmap30['g_url']+'">Daily graph</a>'
+dfmap30['popup']='<a href="'+dfmap30['URL']+'">Daily graph</a>'
 
 base_amount=1.0
 scale=40

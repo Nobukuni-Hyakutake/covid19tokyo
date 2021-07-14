@@ -1,4 +1,4 @@
-,date,group_code,count_7days,last7days_ratio,pref,label,population,en,g_url,number,lat,lon,sevendays_ave_p,color
+,date,group_code,count_7days,last7days_ratio,pref,label,population,en,URL,number,lat,lon,sevendays_ave_p,color
 0,2021-07-12,13101,24.0,1.09,東京都,千代田区,65942.0,Chiyoda,https://nobukuni-hyakutake.github.io/covid19tokyo/Chiyoda_g.html,0,35.694003,139.753634,36.4,#559e83
 1,2021-07-12,13102,92.0,1.77,東京都,中央区,168361.0,Chuo,https://nobukuni-hyakutake.github.io/covid19tokyo/Chuo_g.html,1,35.670587,139.772003,54.64,#1b85b8
 2,2021-07-12,13103,145.0,1.38,東京都,港区,260379.0,Minato,https://nobukuni-hyakutake.github.io/covid19tokyo/Minato_g.html,2,35.658071,139.751599,55.69,#1b85b8
