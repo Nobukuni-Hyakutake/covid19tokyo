@@ -131,7 +131,13 @@ for i in range (63):
         title={"text":title00201,
         },
         xaxis={
-            "linecolor": "black"   
+            "linecolor": "black",
+            "rangeselector":{
+                "buttons":[
+                    {"label":"1ヶ月","step":"month","count":1},
+                    {"label":"全期間","step":"all"},
+                ]
+            }
         },    
         yaxis={
             "title":{
@@ -140,7 +146,7 @@ for i in range (63):
         "linecolor": "black",   
             },
         hovermode='x',
-        plot_bgcolor="#ffffff"
+        plot_bgcolor="#ffffff",
         )
 
     fig04=go.Figure(data=[fig00202, fig00203, figstage4, figstage3], layout=layout)
@@ -149,6 +155,20 @@ for i in range (63):
         )
     fig04.update_layout(legend_orientation="h")
     fig04.update_layout(legend={"x":0,"y":-0.1})
+    sevendays_ave_lastday=dfgraph00201.loc[(dfgraph00201['date']==last_day1),['sevendays_ave']].mean()[0]
+    fig04.update_layout(
+        annotations=[
+            go.layout.Annotation(
+                x=last_day1,
+                y=sevendays_ave_lastday,
+                text=str(last_day1.year)[2:4]+"/"+str(last_day1.month)+"/"+str(last_day1.day)+": "+str(sevendays_ave_lastday),
+                showarrow=True,
+                arrowhead=1,
+                bgcolor="#cc6600",
+                font={"size":12,"color":"white"},
+            )
+        ]
+    )
     fig04.update_xaxes(type='date', tickformat="%y/%-m/%-d", tick0='2020-05-01', dtick="M2") 
     fig04.write_html("docs/"+en00201+"_g.html")
 
