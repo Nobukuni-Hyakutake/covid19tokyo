@@ -7,31 +7,35 @@ from folium.features import DivIcon
 import folium
 from datetime import datetime
 from datetime import timedelta
-url ="https://stopcovid19.metro.tokyo.lg.jp/data/130001_tokyo_covid19_positive_cases_by_municipality.csv"
-df01 = pd.read_csv(url, encoding="UTF-8")
-#df01 = pd.read_csv('130001_tokyo_covid19_positive_cases_by_municipality.csv', encoding="UTF-8")
-df01['date']=pd.to_datetime(df01['公表_年月日'],
-               format='%Y-%m-%d').dt.date
+#url ="https://stopcovid19.metro.tokyo.lg.jp/data/130001_tokyo_covid19_positive_cases_by_municipality.csv"
+#df01 = pd.read_csv(url, encoding="UTF-8")
+df01 = pd.read_csv('130001_tokyo_covid19_positive_cases_by_municipality.csv', encoding="UTF-8")
+df01['date']=df01['公表_年月日'].astype('datetime64')
 last_day1=df01['date'].max()
 
 #東京都全体の1日ごとの集計
 dfw01=df01 \
     .groupby(['date']) \
         .agg({'陽性者数':['sum']}).reset_index()
-dfw01.columns=['date','count_w_sum']
+dfw01.columns=['date','count_sum']
 dfw02=dfw01
 dfw01['yesterday']=dfw01['date']-timedelta(1)
-dfw02=dfw02.rename(columns={'count_w_sum':'count_w_sum_yesterday'})
+dfw02=dfw02.rename(columns={'count_sum':'count_w_sum_yesterday'})
 dfw03=pd.merge(dfw01,dfw02,left_on='yesterday',right_on='date',how='inner')
-dfw03['count_w_1day']=dfw03['count_w_sum']-dfw03['count_w_sum_yesterday']
+dfw03['count_w_1day']=dfw03['count_sum']-dfw03['count_w_sum_yesterday']
 dfw=dfw03.loc[:,['date_x','count_w_1day']]
 dfw=dfw.rename(columns={'date_x':'date'})
 dfw.to_csv('docs/dfw.csv')
+dfw01['group_code']=130001
+dfw01=dfw01.loc[:,['group_code','count_sum','date']]
+print(dfw01.dtypes)
 #/東京都全体の1日ごとの集計
 
 df02=df01.loc[(df01['集計区分']=='市区町村'),:].copy()
 df03=df02.rename(columns={'全国地方公共団体コード':'group_code','陽性者数':'count_sum'})
 df04=df03.loc[:,['group_code','count_sum','date']]
+df04['group_code']=df04['group_code'].astype('int64')
+print(df04.dtypes)
 df04['group_code']=df04['group_code'].astype('int64')
 df04['count_sum']=df04['count_sum'].astype('float64')
 #1日分の陽性者数の算出ここから
@@ -73,17 +77,9 @@ out2=df11.loc[:,['group_code','ruby','date','count_1day','count_7days']]
 out2.to_csv('docs/covid19tokyo_preprocessed_light.csv')
 
 #やさしいにほんごここから
-last_week=last_day1-timedelta(7)
-df21=df01.loc[:,['市区町村名','陽性者数','date']]
-last_day_mitaka_count=df21.query('(市区町村名=="三鷹市")&(date==@last_day1)').mean()[0]
-last_day_musashino_count=df21.query('(市区町村名=="武蔵野市")&(date==@last_day1)').mean()[0]
-df_last_week =df21.query('date==@last_week')
-df_last_week_mitaka=df_last_week.query('市区町村名=="三鷹市"')
-last_week_mitaka_count=df_last_week_mitaka[['陽性者数']].mean()[0]
-df_last_week_musashino=df_last_week.query('市区町村名=="武蔵野市"')
-last_week_musashino_count=df_last_week_musashino[['陽性者数']].mean()[0]
-mitaka_7day_count=int(last_day_mitaka_count-last_week_mitaka_count)
-musashino_7day_count=int(last_day_musashino_count-last_week_musashino_count)
+last_day_count=out.query('date==last_day')
+mitaka_7day_count=int(last_day_count.loc[(last_day_count['label']=='三鷹市'),['count_7days']].iloc[0])
+musashino_7day_count=int(last_day_count.loc[(last_day_count['label']=='武蔵野市'),['count_7days']].iloc[0])
 mitaka_easy='<html><meta charset="UTF-8"><head><title>東京都 三鷹市 新型コロナウイルス陽性者数 (やさしいにほんご)</title></head><body style="font-size: 24px;" bgcolor="#ffffcc">とうきょうと　<b>みたかし</b><br><b>'+str(last_day1.month)+'がつ'+str(last_day1.day)+'にち</b><br>までのいっしゅうかんに<br>しんがたころなういるすに<br>かんせんしたひとは<br><b>'+str(mitaka_7day_count)+'</b>にんです</body></html>'
 fo=open('docs/mitaka_easy.html','wt')
 fo.write(mitaka_easy)
