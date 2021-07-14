@@ -176,9 +176,6 @@ for i in range (63):
         ]
     )
     fig04.update_layout(
-        autosize=False,
-        width=800,
-        height=600,
         margin={"t":80}
         )
     fig04.update_yaxes(automargin=False)
