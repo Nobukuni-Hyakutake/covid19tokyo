@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 print('Processing...')
 import pandas as pd
+from datetime import timedelta
 import numpy as np
 import json
+import plotly.graph_objects as go
 from folium.features import DivIcon
 import folium
-from datetime import datetime
-from datetime import timedelta
 #url ="https://stopcovid19.metro.tokyo.lg.jp/data/130001_tokyo_covid19_positive_cases_by_municipality.csv"
 #df01 = pd.read_csv(url, encoding="UTF-8")
 df01 = pd.read_csv('130001_tokyo_covid19_positive_cases_by_municipality.csv', encoding="UTF-8")
@@ -28,16 +28,22 @@ dfw=dfw.rename(columns={'date_x':'date'})
 dfw.to_csv('docs/dfw.csv')
 dfw01['group_code']=130001
 dfw01=dfw01.loc[:,['group_code','count_sum','date']]
-print(dfw01.dtypes)
+dfw01['count_sum']=dfw01['count_sum'].astype('float64')
 #/東京都全体の1日ごとの集計
 
+#区市町村のデータ取り出し
 df02=df01.loc[(df01['集計区分']=='市区町村'),:].copy()
 df03=df02.rename(columns={'全国地方公共団体コード':'group_code','陽性者数':'count_sum'})
 df04=df03.loc[:,['group_code','count_sum','date']]
 df04['group_code']=df04['group_code'].astype('int64')
-print(df04.dtypes)
-df04['group_code']=df04['group_code'].astype('int64')
 df04['count_sum']=df04['count_sum'].astype('float64')
+#/区市町村のデータ取り出し
+
+#東京都全体と区市町村を結合
+df04=df04.append(dfw01)
+#/東京都全体と区市町村を結合
+df04.to_csv('docs/df04.csv')
+
 #1日分の陽性者数の算出ここから
 df04['yesterday']=df04['date']-timedelta(1)
 df05=pd.merge(df04,df04,left_on=['group_code','yesterday'],right_on=['group_code','date'],how='inner')
@@ -90,10 +96,7 @@ f2.write(musashino_easy)
 f2.close
 #やさしいにほんごここまで
 
-import plotly.express as px
-import plotly.graph_objects as go
-
-for i in range (62):
+for i in range (63):
     dfgraph00201=out.loc[(out['number']==i),['group_code','label','ruby','date','count_1day','count_7days','population','en','number']].copy().reset_index()
     label00201=dfgraph00201['label'][0]
     en00201=dfgraph00201['en'][0]
@@ -146,15 +149,15 @@ for i in range (62):
         )
     fig04.update_layout(legend_orientation="h")
     fig04.update_layout(legend={"x":0,"y":-0.1})
-
     fig04.update_xaxes(type='date', tickformat="%y/%-m/%-d", tick0='2020-05-01', dtick="M2") 
-
     fig04.write_html("docs/"+en00201+"_g.html")
 
 df00101=out
 df00101['g_url']='https://nobukuni-hyakutake.github.io/covid19tokyo/'+out['en']+'_g.html'
 #map表示(工事中)
 pd.set_option('display.max_rows', 100)
+
+#区市町村の緯度経度テーブル
 dfmap01=pd.read_csv('office_address.csv')
 dfmap02=dfmap01.loc[(dfmap01['public_office_classification']==1),['group_code','office_no','public_office_name']]
 dfmap02['office_no']=dfmap02['office_no'].str.replace(pat='#p',repl='').astype('int64')
@@ -164,13 +167,14 @@ dfmap12=pd.concat([dfmap11, dfmap11['position'].str.split(' ', expand=True).asty
 dfmap12.columns=['office_no','lat','lon']
 dfmap13=pd.merge(dfmap02,dfmap12,on='office_no',how='inner').loc[:,['group_code','lat','lon']]
 mapstep00100=dfmap13
+#/区市町村の緯度経度テーブル
 
 dfmap20=df00101.query('date==last_day')
 dfmap21=dfmap20.loc[:,['date','group_code','count_7days','last7days_ratio','pref','label','population','en','g_url','number']]
 dfmap21['group_code']=dfmap21['group_code'].astype('str')
 dfmap21['group_code']=dfmap21['group_code'].str[0:5]
 mapstep00100['group_code']=mapstep00100['group_code'].astype('str')
-dfmap30=pd.merge(dfmap21,mapstep00100,on='group_code',how='inner')
+dfmap30=pd.merge(dfmap21,mapstep00100,on='group_code',how='inner')#東京都全体の緯度経度情報は無いので、結合後のテーブルには入らない
 dfmap30['date']=dfmap30['date'].astype('datetime64')
 
 dfmap30['last7days_ratio']=round(dfmap30['last7days_ratio'],2)
@@ -178,18 +182,12 @@ dfmap30['sevendays_ave_p']=round(dfmap30['count_7days']/dfmap30['population']*10
 dfmap30['color']="#559e83"
 dfmap30.loc[(dfmap30['last7days_ratio']<0.9),['color']]="#c3cb71"
 dfmap30.loc[(dfmap30['last7days_ratio']>1.1),['color']]="#1b85b8"
-
 dfmap30.to_csv('step00200.csv')
-
-    
 dfmap30['popup']='<a href="'+dfmap30['g_url']+'">Daily graph</a>'
 
-test='Kokubunji'
-test2='国分寺市'
 base_amount=1.0
 scale=40
-tokyo_map=folium.Map(location=[35.710943,139.462252],zoom_start=11, tiles="openstreetmap")
-
+#tokyo_map=folium.Map(location=[35.710943,139.462252],zoom_start=11, tiles="openstreetmap")
 tokyo_map=folium.Map(location=[35.710943,139.462252],zoom_start=11, tiles="cartodbdark_matter")
 test_df=pd.read_csv('japan_co.csv')
 #base_map=folium.Map(location=[35.655616,139.338853],zoom_start=5.0)#Choropleth追加
