@@ -127,7 +127,7 @@ for i in range (63):
         hoverinfo = "none"
     )
     layout=go.Layout(
-        font=dict(size=25),
+        font=dict(size=20),
         title={"text":title00201,
         },
         xaxis={
@@ -175,6 +175,8 @@ for i in range (63):
             )
         ]
     )
+    fig04.update_layout(margin={"t":150})
+    fig04.update_yaxes(automargin=False)
     fig04.update_xaxes(type='date', tickformat="%y/%-m/%-d", tick0='2020-05-01', dtick="M2") 
     fig04.write_html("docs/"+en00201+"_g.html")
 
