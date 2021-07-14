@@ -135,7 +135,7 @@ for i in range (63):
             "rangeselector":{
                 "buttons":[
                     {"label":"全期間","step":"all"},
-                    {"label":"過去1ヵ月","step":"month","count":1,"stepmode":"backward"}
+                    {"label":"直近2ヵ月","step":"month","count":2,"stepmode":"backward"}
                 ],
             },
             "type":"date",
@@ -155,7 +155,7 @@ for i in range (63):
         rangemode="nonnegative"
         )
     fig04.update_layout(legend_orientation="h")
-    fig04.update_layout(legend={"x":0,"y":-0.1})
+    fig04.update_layout(legend={"x":0,"y":-0.18})
     sevendays_ave_lastday=dfgraph00201.loc[(dfgraph00201['date']==last_day1),['sevendays_ave']].mean()[0]
     fig04.update_layout(
         annotations=[
@@ -175,7 +175,12 @@ for i in range (63):
             )
         ]
     )
-    fig04.update_layout(margin={"t":150})
+    fig04.update_layout(
+        autosize=False,
+        width=800,
+        height=600,
+        margin={"t":80}
+        )
     fig04.update_yaxes(automargin=False)
     fig04.update_xaxes(type='date', tickformat="%y/%-m/%-d", tick0='2020-05-01', dtick="M2") 
     fig04.write_html("docs/"+en00201+"_g.html")
