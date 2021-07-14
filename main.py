@@ -77,10 +77,12 @@ df11['population']=df11['population'].astype('float64')
 out=df11
 #print(out)
 #print(out.dtypes)
-out.to_csv('docs/covid19tokyo_preprocessed.csv')
 
 out2=df11.loc[:,['group_code','ruby','date','count_1day','count_7days','jp_order']]
 out2.to_csv('docs/covid19tokyo_preprocessed_light.csv')
+
+out3=out.query('group_code!=130001')
+out3.to_csv('docs/covid19tokyo_preprocessed.csv')
 
 #やさしいにほんごここから
 last_day_count=out.query('date==last_day')
@@ -193,7 +195,7 @@ df00102=df00102.sort_values('jp_order').reset_index()
 df00102=df00102.loc[:,['区市町村名','URL']]
 list0=df00102.to_html(render_links=True,index = False)
 
-f3=open('docs/link_list.html','wt')
+f3=open('docs/link_list2.html','wt')
 f3.write(list0)
 f3.close
 
@@ -224,14 +226,14 @@ dfmap30['last7days_ratio']=round(dfmap30['last7days_ratio'],2)
 dfmap30['sevendays_ave_p']=round(dfmap30['count_7days']/dfmap30['population']*100000,2)
 dfmap30['color']="#559e83"
 dfmap30.loc[(dfmap30['last7days_ratio']<0.9),['color']]="#c3cb71"
-dfmap30.loc[(dfmap30['last7days_ratio']>1.1),['color']]="#1b85b8"
+dfmap30.loc[(dfmap30['last7days_ratio']>=1.1),['color']]="#1b85b8"
 dfmap30.to_csv('step00200.csv')
 dfmap30['popup']='<a href="'+dfmap30['URL']+'">Daily graph</a>'
 
 base_amount=1.0
 scale=40
 #tokyo_map=folium.Map(location=[35.710943,139.462252],zoom_start=11, tiles="openstreetmap")
-tokyo_map=folium.Map(location=[35.710943,139.462252],zoom_start=11, tiles="cartodbdark_matter")
+tokyo_map=folium.Map(location=[35.710943,139.462252],zoom_start=10, tiles="cartodbdark_matter")
 test_df=pd.read_csv('japan_co.csv')
 #base_map=folium.Map(location=[35.655616,139.338853],zoom_start=5.0)#Choropleth追加
 cho=folium.Choropleth(
@@ -269,7 +271,7 @@ for i in range(62):
     dfgraph00202=dfgraph00202.reset_index()
     label00202=dfgraph00202['label'][0]
     en00202=dfgraph00202['en'][0]
-    dfgraph00202['sevendays_ave_p']=round((dfgraph00202['count_7days']/7)/dfgraph00202['population']*100000,1)
+    dfgraph00202['sevendays_ave_p']=round((dfgraph00202['count_7days'])/dfgraph00202['population']*100000,1)
     sevendays_ave_p00201=dfgraph00202['sevendays_ave_p'][0]
     text00202='''<div style="font-size: 10pt" style="text-align:center;">'''+en00202+'<br>'+str(sevendays_ave_p00201)+'</div>'
     lat00202=dfgraph00202['lat'][0]
