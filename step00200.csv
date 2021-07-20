@@ -14,7 +14,7 @@
 12,2021-07-19,13113,195.0,1.73,東京都,渋谷区,229671.0,Shibuya,https://nobukuni-hyakutake.github.io/covid19tokyo/Shibuya_g.html,12,35.663982,139.697948,84.9,#1b85b8
 13,2021-07-19,13114,249.0,1.14,東京都,中野区,335234.0,Nakano,https://nobukuni-hyakutake.github.io/covid19tokyo/Nakano_g.html,13,35.707268,139.663738,74.28,#1b85b8
 14,2021-07-19,13115,355.0,1.31,東京都,杉並区,574118.0,Suginami,https://nobukuni-hyakutake.github.io/covid19tokyo/Suginami_g.html,14,35.699546,139.636414,61.83,#1b85b8
-15,2021-07-19,13116,229.0,1.67,東京都,豊島区,290246.0,Toshima,https://nobukuni-hyakutake.github.io/covid19tokyo/Toshima_g.html,15,35.732437,139.715469,78.9,#1b85b8
+15,2021-07-19,13116,229.0,1.67,東京都,豊島区,290246.0,Toshimaku,https://nobukuni-hyakutake.github.io/covid19tokyo/Toshimaku_g.html,15,35.732437,139.715469,78.9,#1b85b8
 16,2021-07-19,13117,154.0,1.1,東京都,北区,353908.0,Kita,https://nobukuni-hyakutake.github.io/covid19tokyo/Kita_g.html,16,35.752805,139.733657,43.51,#1b85b8
 17,2021-07-19,13118,130.0,1.71,東京都,荒川区,217146.0,Arakawa,https://nobukuni-hyakutake.github.io/covid19tokyo/Arakawa_g.html,17,35.736083,139.783372,59.87,#1b85b8
 18,2021-07-19,13119,342.0,1.53,東京都,板橋区,571357.0,Itabashi,https://nobukuni-hyakutake.github.io/covid19tokyo/Itabashi_g.html,18,35.751245,139.709246,59.86,#1b85b8
@@ -53,7 +53,7 @@
 51,2021-07-19,13307,0.0,,東京都,檜原村,2138.0,Hinohara,https://nobukuni-hyakutake.github.io/covid19tokyo/Hinohara_g.html,51,35.72684,139.148852,0.0,#559e83
 52,2021-07-19,13308,0.0,,東京都,奥多摩町,5038.0,Okutama,https://nobukuni-hyakutake.github.io/covid19tokyo/Okutama_g.html,52,35.80952,139.096214,0.0,#559e83
 53,2021-07-19,13361,3.0,0.11,東京都,大島町,7544.0,Oshima,https://nobukuni-hyakutake.github.io/covid19tokyo/Oshima_g.html,53,34.750058,139.355619,39.77,#c3cb71
-54,2021-07-19,13362,0.0,,東京都,利島村,322.0,Toshima,https://nobukuni-hyakutake.github.io/covid19tokyo/Toshima_g.html,54,34.529354,139.282584,0.0,#559e83
+54,2021-07-19,13362,0.0,,東京都,利島村,322.0,Toshimamura,https://nobukuni-hyakutake.github.io/covid19tokyo/Toshimamura_g.html,54,34.529354,139.282584,0.0,#559e83
 55,2021-07-19,13363,0.0,,東京都,新島村,2688.0,Niijima,https://nobukuni-hyakutake.github.io/covid19tokyo/Niijima_g.html,55,34.377138,139.256556,0.0,#559e83
 56,2021-07-19,13364,0.0,,東京都,神津島村,1919.0,Kozushima,https://nobukuni-hyakutake.github.io/covid19tokyo/Kozushima_g.html,56,34.205371,139.134426,0.0,#559e83
 57,2021-07-19,13381,1.0,,東京都,三宅村,2425.0,Miyake,https://nobukuni-hyakutake.github.io/covid19tokyo/Miyake_g.html,57,34.075779,139.479747,41.24,#559e83
