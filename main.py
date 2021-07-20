@@ -102,7 +102,7 @@ for i in range (63):
     dfgraph00201=out.loc[(out['number']==i),['group_code','label','ruby','date','count_1day','count_7days','population','en','number']].copy().reset_index()
     label00201=dfgraph00201['label'][0]
     en00201=dfgraph00201['en'][0]
-    title00201=dfgraph00201['label'][0]+' 新型コロナウイルス陽性者数'
+    title00201=dfgraph00201['label'][0]+' 新型コロナウイルス陽性者数 (スマートフォンは画面を横向きにして下さい)'
     dfgraph00201['sevendays_ave']=round((dfgraph00201['count_7days']/7)/dfgraph00201['population']*100000,1)
     dfgraph00201['count_1day_p']=round(dfgraph00201['count_1day']/dfgraph00201['population']*100000,1)
     dfgraph00201['stage4']=3.6
