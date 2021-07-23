@@ -280,7 +280,7 @@ tokyo_map.save(outfile="docs/tokyo_map.html")
 #/map表示
 
 #index.htmlに表示させるmapの日付
-map_note='<html><head><style>body {font-size:24px}</style></head>'+str(last_day1.year)[-2:]+'/'+str(last_day1.month)+'/'+str(last_day1.day)+'時点。 スマートフォンは横向きにして下さい</html>'
+map_note='<html><head><style>body {font-size:32px}</style></head>'+str(last_day1.year)[-2:]+'/'+str(last_day1.month)+'/'+str(last_day1.day)+'時点。 スマートフォンは横向きにして下さい</html>'
 f4=open('docs/map_note.html','wt')
 f4.write(map_note)
 f4.close
