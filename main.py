@@ -5,8 +5,9 @@ from datetime import timedelta
 import numpy as np
 import json
 import plotly.graph_objects as go
-from folium.features import DivIcon
 import folium
+from folium.features import DivIcon
+from folium.plugins import FloatImage
 url ="https://stopcovid19.metro.tokyo.lg.jp/data/130001_tokyo_covid19_positive_cases_by_municipality.csv"
 df01 = pd.read_csv(url, encoding="UTF-8")
 #df01 = pd.read_csv('130001_tokyo_covid19_positive_cases_by_municipality.csv', encoding="UTF-8")
@@ -102,7 +103,7 @@ for i in range (63):
     dfgraph00201=out.loc[(out['number']==i),['group_code','label','ruby','date','count_1day','count_7days','population','en','number']].copy().reset_index()
     label00201=dfgraph00201['label'][0]
     en00201=dfgraph00201['en'][0]
-    title00201=dfgraph00201['label'][0]+' 新型コロナウイルス陽性者数 (スマートフォンは画面を横向きにして下さい)'
+    title00201=dfgraph00201['label'][0]+' 新型コロナウイルス陽性者数 スマートフォンは横向きにして下さい'
     dfgraph00201['sevendays_ave']=round((dfgraph00201['count_7days']/7)/dfgraph00201['population']*100000,1)
     dfgraph00201['count_1day_p']=round(dfgraph00201['count_1day']/dfgraph00201['population']*100000,1)
     dfgraph00201['stage4']=3.6
@@ -187,20 +188,8 @@ for i in range (63):
 df00101=out
 df00101['URL']='https://nobukuni-hyakutake.github.io/covid19tokyo/'+out['en']+'_g.html'
 df00101.to_csv('docs/df00101.csv')
-df00102=df00101
-df00102['区市町村名']=df00102['ruby']
-df00102=df00102.loc[:,['区市町村名','URL','jp_order']]
-df00102=df00102.drop_duplicates(subset=['区市町村名'],keep='first')
-df00102=df00102.sort_values('jp_order').reset_index()
-df00102=df00102.loc[:,['区市町村名','URL']]
-list0=df00102.to_html(render_links=True,index = False)
 
-f3=open('docs/link_list2.html','wt')
-f3.write(list0)
-f3.close
-
-
-#map表示(工事中)
+#map表示
 pd.set_option('display.max_rows', 100)
 #区市町村の緯度経度テーブル
 dfmap01=pd.read_csv('office_address.csv')
@@ -284,8 +273,18 @@ for i in range(62):
             html=text00202
             )
         ).add_to(tokyo_map)
+
+image_file = 'map_legend.png'
+FloatImage(image_file, bottom=0, left=0).add_to(tokyo_map)
 tokyo_map.save(outfile="docs/tokyo_map.html")
 #/map表示
+
+#index.htmlに表示させるmapの日付
+map_note='<html><head><style>body {font-size: x-large,}</style></head>'+str(last_day1.year)[-2:]+'/'+str(last_day1.month)+'/'+str(last_day1.day)+'時点。 スマートフォンは横向きにして下さい</html>'
+f4=open('docs/map_note.html','wt')
+f4.write(map_note)
+f4.close
+#/index.htmlに表示させるmapの日付
 
 print('last day is:')
 print(last_day1)

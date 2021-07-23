@@ -6,4 +6,3 @@ url_df = pd.DataFrame(
     }
     )
 print(url_df)
-print(url_df.to_html(render_links=True))
