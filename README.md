@@ -18,5 +18,5 @@
 |位置|[国土交通省 国土数値情報 東京](https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P34.html#prefecture13)|
 |都道府県境界線|[日本の区画情報](https://github.com/kokubonatsumi/Japanmap)|
 ## 参考文献
--[Python インタラクティブ・データビジュアライゼーション入門](https://www.asakura.co.jp/books/isbn/978-4-254-12258-9/)
--[データ分析者のためのPythonデータビジュアライゼーション入門 コードと連動してわかる可視化手法](https://www.shoeisha.co.jp/book/detail/9784798163970)
+- [Python インタラクティブ・データビジュアライゼーション入門](https://www.asakura.co.jp/books/isbn/978-4-254-12258-9/)
+- [データ分析者のためのPythonデータビジュアライゼーション入門 コードと連動してわかる可視化手法](https://www.shoeisha.co.jp/book/detail/9784798163970)
