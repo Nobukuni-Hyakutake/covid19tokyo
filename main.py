@@ -244,7 +244,7 @@ cho.add_to(tokyo_map)
 
 for index, row in dfmap30.iterrows():
     location=(row['lat'],row['lon'])
-    radius=scale*(row['sevendays_ave_p']/base_amount)*0.7
+    radius=scale*(row['sevendays_ave_p']/base_amount)*0.4
     color=row['color']
     popup=row['popup']
     folium.Circle(
