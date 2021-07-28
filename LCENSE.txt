@@ -1,0 +1,6 @@
+License Copyright: 2021, Nobukuni Hyakutake
+License License: Unknown.
+License Contact: Unknown.
+
+SPDX short identifier: MIT
+

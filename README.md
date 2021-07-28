@@ -20,3 +20,6 @@
 ## 参考文献
 - [Python インタラクティブ・データビジュアライゼーション入門](https://www.asakura.co.jp/books/isbn/978-4-254-12258-9/)
 - [データ分析者のためのPythonデータビジュアライゼーション入門 コードと連動してわかる可視化手法](https://www.shoeisha.co.jp/book/detail/9784798163970)
+
+## License
+This software is released under the MIT License, see LICENSE.txt.
