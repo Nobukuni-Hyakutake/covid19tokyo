@@ -220,7 +220,7 @@ dfmap30.to_csv('step00200.csv')
 dfmap30['popup']='<a href="'+dfmap30['URL']+'">Daily graph</a>'
 
 base_amount=1.0
-scale=40
+scale=90
 #tokyo_map=folium.Map(location=[35.710943,139.462252],zoom_start=11, tiles="openstreetmap")
 tokyo_map=folium.Map(location=[35.710943,139.462252],zoom_start=10, tiles="cartodbdark_matter")
 test_df=pd.read_csv('japan_co.csv')
@@ -244,7 +244,7 @@ cho.add_to(tokyo_map)
 
 for index, row in dfmap30.iterrows():
     location=(row['lat'],row['lon'])
-    radius=scale*(row['sevendays_ave_p']/base_amount)*0.4
+    radius=scale*((row['sevendays_ave_p']/base_amount)**0.5)
     color=row['color']
     popup=row['popup']
     folium.Circle(
