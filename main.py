@@ -76,14 +76,7 @@ df11=pd.merge(df10,ruby2,on='group_code',how='inner')
 df11['population']=df11['population'].astype('float64')
 
 out=df11
-#print(out)
-#print(out.dtypes)
-
-out2=df11.loc[:,['group_code','ruby','date','count_1day','count_7days','jp_order']]
-out2.to_csv('docs/covid19tokyo_preprocessed_light.csv')
-
-out3=out.query('group_code!=130001')
-out3.to_csv('docs/covid19tokyo_preprocessed.csv')
+out.to_csv('docs/covid19tokyo_preprocessed.csv')
 
 #やさしいにほんごここから
 last_day_count=out.query('date==last_day')
