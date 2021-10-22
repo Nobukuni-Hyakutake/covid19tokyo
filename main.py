@@ -26,7 +26,6 @@ dfw03=pd.merge(dfw01,dfw02,left_on='yesterday',right_on='date',how='inner')
 dfw03['count_w_1day']=dfw03['count_sum']-dfw03['count_w_sum_yesterday']
 dfw=dfw03.loc[:,['date_x','count_w_1day']]
 dfw=dfw.rename(columns={'date_x':'date'})
-dfw.to_csv('docs/dfw.csv')
 dfw01['group_code']=130001
 dfw01=dfw01.loc[:,['group_code','count_sum','date']]
 dfw01['count_sum']=dfw01['count_sum'].astype('float64')
@@ -43,7 +42,6 @@ df04['count_sum']=df04['count_sum'].astype('float64')
 #東京都全体と区市町村を結合
 df04=df04.append(dfw01)
 #/東京都全体と区市町村を結合
-df04.to_csv('docs/df04.csv')
 
 #1日分の陽性者数の算出ここから
 df04['yesterday']=df04['date']-timedelta(1)
@@ -177,11 +175,7 @@ for i in range (63):
     fig04.update_yaxes(automargin=False)
     fig04.update_xaxes(type='date', tickformat="%y/%-m/%-d", tick0='2020-05-01', dtick="M2") 
     fig04.write_html("docs/"+en00201+"_g.html")
-
 df00101=out
-df00101['URL']='https://nobukuni-hyakutake.github.io/covid19tokyo/'+out['en']+'_g.html'
-df00101.to_csv('docs/df00101.csv')
-
 #map表示
 pd.set_option('display.max_rows', 100)
 #区市町村の緯度経度テーブル
@@ -197,7 +191,7 @@ mapstep00100=dfmap13
 #/区市町村の緯度経度テーブル
 
 dfmap20=df00101.query('date==last_day')
-dfmap21=dfmap20.loc[:,['date','group_code','count_7days','last7days_ratio','pref','label','population','en','URL','number']]
+dfmap21=dfmap20.loc[:,['date','group_code','count_7days','last7days_ratio','pref','label','population','en','number']]
 dfmap21['group_code']=dfmap21['group_code'].astype('str')
 dfmap21['group_code']=dfmap21['group_code'].str[0:5]
 mapstep00100['group_code']=mapstep00100['group_code'].astype('str')
@@ -209,8 +203,6 @@ dfmap30['sevendays_ave_p']=round(dfmap30['count_7days']/dfmap30['population']*10
 dfmap30['color']="#559e83"
 dfmap30.loc[(dfmap30['last7days_ratio']<0.9),['color']]="#c3cb71"
 dfmap30.loc[(dfmap30['last7days_ratio']>=1.1),['color']]="#1b85b8"
-dfmap30.to_csv('step00200.csv')
-dfmap30['popup']='<a href="'+dfmap30['URL']+'">Daily graph</a>'
 
 base_amount=1.0
 scale=90
@@ -239,13 +231,11 @@ for index, row in dfmap30.iterrows():
     location=(row['lat'],row['lon'])
     radius=scale*((row['sevendays_ave_p']/base_amount)**0.5)
     color=row['color']
-    popup=row['popup']
     folium.Circle(
         location=location,
         radius=radius,
         color=color,
         fill_color=color,
-        popup=popup
         ).add_to(tokyo_map)
 
 for i in range(62):
