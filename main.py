@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 print('Processing...')
+import time
+t1 = time.time()
 import pandas as pd
 from datetime import timedelta
 import numpy as np
@@ -273,3 +275,6 @@ print('last day is:')
 print(last_day1)
 print('Done')
 
+t2 = time.time()
+elapsed_time = round((t2-t1),1)
+print(f"Elapsed time：{elapsed_time} s")
