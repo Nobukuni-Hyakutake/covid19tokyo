@@ -12,7 +12,7 @@ from folium.features import DivIcon
 from folium.plugins import FloatImage
 url ="https://stopcovid19.metro.tokyo.lg.jp/data/130001_tokyo_covid19_positive_cases_by_municipality.csv"
 df01 = pd.read_csv(url, encoding="UTF-8")
-#df01 = pd.read_csv('130001_tokyo_covid19_positive_cases_by_municipality.csv', encoding="UTF-8")
+# df01 = pd.read_csv('130001_tokyo_covid19_positive_cases_by_municipality.csv', encoding="UTF-8")
 df01['date']=df01['公表_年月日'].astype('datetime64')
 last_day1=df01['date'].max()
 
@@ -68,6 +68,7 @@ df09=df09.loc[:,['group_code','date_x_x_x','count_sum_x_x_x','count_1day_x_x','c
 
 df10=df09.rename(columns={'date_x_x_x':'date','count_sum_x_x_x':'count_sum','count_1day_x_x':'count_1day','count_7days_x':'count_7days'})
 df10['last7days_ratio']=(df10['count_7days']/(df10['count_14days']-df10['count_7days'])).replace([np.inf, -np.inf], np.nan)
+df10['last7days_ratio']=np.where(df10['last7days_ratio']<0,np.nan,df10['last7days_ratio'])
 df10['last_day']=last_day1
 
 #ふりがな・人口を追加する
@@ -202,6 +203,7 @@ dfmap30['date']=dfmap30['date'].astype('datetime64')
 
 dfmap30['last7days_ratio']=round(dfmap30['last7days_ratio'],2)
 dfmap30['sevendays_ave_p']=round(dfmap30['count_7days']/dfmap30['population']*100000,2)
+dfmap30['sevendays_ave_p']=np.where(dfmap30['sevendays_ave_p']<0,np.nan,dfmap30['sevendays_ave_p'])
 dfmap30['color']="#559e83"
 dfmap30.loc[(dfmap30['last7days_ratio']<0.9),['color']]="#c3cb71"
 dfmap30.loc[(dfmap30['last7days_ratio']>=1.1),['color']]="#1b85b8"
