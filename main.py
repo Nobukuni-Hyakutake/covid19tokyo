@@ -203,7 +203,7 @@ dfmap30['date']=dfmap30['date'].astype('datetime64')
 
 dfmap30['last7days_ratio']=round(dfmap30['last7days_ratio'],2)
 dfmap30['sevendays_ave_p']=round(dfmap30['count_7days']/dfmap30['population']*100000,2)
-dfmap30['sevendays_ave_p']=np.where(dfmap30['sevendays_ave_p']<0,np.nan,dfmap30['sevendays_ave_p'])
+dfmap30['sevendays_ave_p']=np.where(dfmap30['sevendays_ave_p']<0,0,dfmap30['sevendays_ave_p'])
 dfmap30['color']="#559e83"
 dfmap30.loc[(dfmap30['last7days_ratio']<0.9),['color']]="#c3cb71"
 dfmap30.loc[(dfmap30['last7days_ratio']>=1.1),['color']]="#1b85b8"
