@@ -247,7 +247,7 @@ for i in range(62):
     en00202=dfgraph00202['en'][0]
     dfgraph00202['sevendays_ave_p']=round((dfgraph00202['count_7days'])/dfgraph00202['population']*100000,1)
     sevendays_ave_p00201=dfgraph00202['sevendays_ave_p'][0]
-    text00202='''<div style="font-size: 10pt" style="text-align:center;">'''+en00202+'<br>'+str(sevendays_ave_p00201)+'</div>'
+    text00202='''<div style="font-size: 10pt" style="text-align:center;">'''+str(en00202)+'<br>'+str(sevendays_ave_p00201)+'</div>'
     lat00202=dfgraph00202['lat'][0]
     lon00202=dfgraph00202['lon'][0]
     folium.map.Marker(
