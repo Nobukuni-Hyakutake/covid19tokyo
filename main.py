@@ -2,6 +2,8 @@
 print('Processing...')
 import time
 t1 = time.time()
+import os
+import wget
 import pandas as pd
 from datetime import timedelta
 import numpy as np
@@ -10,7 +12,7 @@ import plotly.graph_objects as go
 import folium
 from folium.features import DivIcon
 from folium.plugins import FloatImage
-import wget
+os.remove('130001_tokyo_covid19_positive_cases_by_municipality.csv')
 url ="https://stopcovid19.metro.tokyo.lg.jp/data/130001_tokyo_covid19_positive_cases_by_municipality.csv"
 wget.download(url)
 df01 = pd.read_csv('130001_tokyo_covid19_positive_cases_by_municipality.csv', encoding="UTF-8")
