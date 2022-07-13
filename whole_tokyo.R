@@ -27,12 +27,12 @@ if (max(ttoday$date)>maxdate){
 t05<-t05%>%mutate(ma7 = slide_index_dbl(.x=t05$cases,.i=t05$date,.f = mean,.before = 6))
 fig01<-plot_ly(x=t05$date,y=t05$cases,type="bar",name="cases")%>%add_trace(x=t05$date,y=t05$ma7,type="scatter",mode="line",name="moving_ave")
 fig01
-htmlwidgets::saveWidget(fig01,file="../docs/moving_ave.html")
+htmlwidgets::saveWidget(fig01,file="docs/moving_ave.html")
 t06<-t05
 t06$af7<-t06$date+7
 t07<-left_join(t05,select(t06,af7,ma7)%>%rename(be7_ma7=ma7),by=c("date"="af7"))
 t07$seven_days_ratio=t07$ma7/t07$be7_ma7
 fig02<-plot_ly(x=t07$date,y=round(t07$seven_days_ratio,3),type="scatter",mode="markers")%>%layout(title = "Whole_tokyo")
 fig02
-htmlwidgets::saveWidget(fig02,file="../docs/whole_tokyo_ratio.html")
+htmlwidgets::saveWidget(fig02,file="docs/whole_tokyo_ratio.html")
 beep(sound=5)
