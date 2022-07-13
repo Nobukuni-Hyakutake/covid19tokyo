@@ -3,17 +3,19 @@ library(lubridate)
 library(slider)
 library(beepr)
 library(plotly)
+library(htmlwidgets)
 options(timeout=120)
 # delete # of download.file when updating data (need 90 approx. sec.)
 download.file("https://stopcovid19.metro.tokyo.lg.jp/data/130001_tokyo_covid19_patients_2022-1.csv", "130001_tokyo_covid19_patients.csv", "auto")
-# オープンデータに入っていない新しい数字を入れたいときは、下記の数字を更新する。そうでないときは、下記の数字は放置する。無視される。(行ごと消してはいけない)
-# 更新必要パートここから
+# setting of latest data (no need to delete)
 ttoday<-tibble(date=c("2022-03-26"),cases=c(7440))
-# 更新必要パート終わり
+# /setting of latest data
 ttoday$date<-ymd(ttoday$date)
 t01<-read.csv(file="130001_tokyo_covid19_patients.csv")%>%as_tibble()
-t02<-t01%>%select(公表_年月日)%>%rename(date=公表_年月日)
+write.csv(t01,file="t01.csv")
+t02<-t01%>%select("公表_年月日")%>%rename(date="公表_年月日")
 t02$date<-ymd(t02$date)
+write.csv(t02,file="t02.csv")
 t03<-t02%>%group_by(date)%>%summarise(cases=n())%>%arrange(date)
 maxdate=max(t03$date)
 mindate=min(t03$date)
@@ -21,18 +23,17 @@ t04<-tibble(value=c(mindate:maxdate))
 t04$date<-as_date(t04$value)
 t05<-left_join(select(t04,date),t03,by="date")
 t05$cases<-ifelse(is.na(t05$cases),0,t05$cases)
+write.csv(t05,file="t05_1.csv")
 if (max(ttoday$date)>maxdate){
   t05<-bind_rows(t05,ttoday)%>%arrange(date)
 }
 t05<-t05%>%mutate(ma7 = slide_index_dbl(.x=t05$cases,.i=t05$date,.f = mean,.before = 6))
+write.csv(t05,file="t05.csv")
 fig01<-plot_ly(x=t05$date,y=t05$cases,type="bar",name="cases")%>%add_trace(x=t05$date,y=t05$ma7,type="scatter",mode="line",name="moving_ave")
-fig01
 htmlwidgets::saveWidget(fig01,file="docs/moving_ave.html")
 t06<-t05
 t06$af7<-t06$date+7
 t07<-left_join(t05,select(t06,af7,ma7)%>%rename(be7_ma7=ma7),by=c("date"="af7"))
 t07$seven_days_ratio=t07$ma7/t07$be7_ma7
 fig02<-plot_ly(x=t07$date,y=round(t07$seven_days_ratio,3),type="scatter",mode="markers")%>%layout(title = "Whole_tokyo")
-fig02
 htmlwidgets::saveWidget(fig02,file="docs/whole_tokyo_ratio.html")
-beep(sound=5)
