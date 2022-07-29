@@ -8,7 +8,7 @@ options(timeout=120)
 # delete # of download.file when updating data (need 90 approx. sec.)
 download.file("https://stopcovid19.metro.tokyo.lg.jp/data/130001_tokyo_covid19_patients_2022-1.csv", "130001_tokyo_covid19_patients.csv", "auto")
 # setting of latest data (no need to delete)
-ttoday<-tibble(date=c("2022-07-27"),cases=c(29036))
+ttoday<-tibble(date=c("2022-07-2p"),cases=c(36814))
 # /setting of latest data
 ttoday$date<-ymd(ttoday$date)
 t01<-read_csv(file="130001_tokyo_covid19_patients.csv",col_names = FALSE,skip=1)
