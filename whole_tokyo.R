@@ -10,7 +10,7 @@ options(timeout=120)
 # download.file("https://stopcovid19.metro.tokyo.lg.jp/data/130001_tokyo_covid19_patients_2022-1.csv", "130001_tokyo_covid19_patients_2022-1.csv", "auto")
 download.file("https://stopcovid19.metro.tokyo.lg.jp/data/130001_tokyo_covid19_patients_2022-2.csv", "130001_tokyo_covid19_patients_2022-2.csv", "auto")
 # setting of latest data (no need to delete)
-ttoday<-tibble(date=c("2022-08-15"),cases=c(23135))
+ttoday<-tibble(date=c("2022-08-16"),cases=c(23511))
 # /setting of latest data
 ttoday$date<-ymd(ttoday$date)
 t000<-read_csv(file="130001_tokyo_covid19_patients_2022.csv",col_names = FALSE,skip=1)
