@@ -11,7 +11,7 @@ import folium
 from folium.features import DivIcon
 from folium.plugins import FloatImage
 
-url ="https://stopcovid19.metro.tokyo.lg.jp/data/130001_tokyo_covid19_positive_cases_by_municipality.csv"
+url ="https://data.stopcovid19.metro.tokyo.lg.jp/130001_tokyo_covid19_positive_cases_by_municipality.csv"
 df01 = pd.read_csv(url, encoding="UTF-8")
 df01.to_csv('130001_tokyo_covid19_positive_cases_by_municipality_download.csv',index=False)
 # df01 = pd.read_csv('130001_tokyo_covid19_positive_cases_by_municipality.csv', encoding="UTF-8")
